@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHTERRA - Transportes e Locação de Máquinas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects not covered by Tailwind */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu {
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-item {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-item:not(.active) {
+            opacity: 0;
+            display: none;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+            display: block;
+        }
+        
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .answer {
+            max-height: 500px;
+        }
+        
+        .counter {
+            transition: all 1s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <!-- Top Bar -->
+        <div class="bg-blue-900 text-white py-2 px-4">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-2 md:mb-0">
+                    <img src="https://via.placeholder.com/150x50?text=CHTERRA" alt="CHTERRA Logo" class="h-8">
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#faq" class="text-sm hover:text-blue-200">Dúvidas Frequentes</a>
+                    <a href="#contact" class="text-sm hover:text-blue-200">Contato</a>
+                    <a href="#jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
+                </div>
+                <div class="flex items-center space-x-4 mt-2 md:mt-0">
+                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav class="bg-white py-3 px-4">
+            <div class="container mx-auto">
+                <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+                    <li class="dropdown relative">
+                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                            Área do Cliente <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Orçamentos</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Notícias</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                            A CHTERRA <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Quem Somos</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Contato</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                            Serviços <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Transportes Rodoviários</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Locação de Máquinas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium">Diferenciais</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Carousel -->
+        <section class="relative w-full h-96 md:h-screen overflow-hidden">
+            <div class="carousel-item active relative w-full h-full">
+                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
+                <img src="https://via.placeholder.com/1920x1080?text=Transporte+Rodoviário" alt="Transporte Rodoviário" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Transporte Rodoviário</h1>
+                        <p class="text-xl md:text-2xl mb-8">Soluções logísticas completas para sua empresa</p>
+                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item relative w-full h-full">
+                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
+                <img src="https://via.placeholder.com/1920x1080?text=Locação+de+Máquinas" alt="Locação de Máquinas" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Locação de Máquinas</h1>
+                        <p class="text-xl md:text-2xl mb-8">Equipamentos modernos para sua obra</p>
+                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item relative w-full h-full">
+                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
+                <img src="https://via.placeholder.com/1920x1080?text=Apresentação+Institucional" alt="Apresentação Institucional" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">CHTERRA</h1>
+                        <p class="text-xl md:text-2xl mb-8">30 anos de excelência em logística</p>
+                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item relative w-full h-full">
+                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
+                <img src="https://via.placeholder.com/1920x1080?text=Condições+de+Pagamento" alt="Condições de Pagamento" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Condições Especiais</h1>
+                        <p class="text-xl md:text-2xl mb-8">Flexibilidade para atender sua necessidade</p>
+                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Conheça</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-blue-900 p-3 rounded-full">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-blue-900 p-3 rounded-full">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="0"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="1"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="2"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="3"></button>
+            </div>
+        </section>
+        
+        <!-- Quick Links -->
+        <section class="py-12 px-4">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <a href="#" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                        <img src="https://via.placeholder.com/800x500?text=Transporte+Rodoviário" alt="Transporte Rodoviário" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Transporte Rodoviário</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                        <img src="https://via.placeholder.com/800x500?text=Locação+de+Máquinas" alt="Locação de Máquinas" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Locação de Máquinas</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- News + Video Section -->
+        <section class="py-12 px-4 bg-gray-100">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Últimas Notícias</h2>
+                
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2">
+                        <div class="space-y-6">
+                            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                                <div class="flex flex-col md:flex-row">
+                                    <img src="https://via.placeholder.com/300x200?text=Notícia+1" alt="Notícia 1" class="w-full md:w-1/3 h-48 object-cover">
+                                    <div class="p-4 md:w-2/3">
+                                        <h4 class="text-xl font-bold text-blue-900 mb-2">CHTERRA amplia frota com novos caminhões</h4>
+                                        <p class="text-gray-600">Investimento de R$ 10 milhões reforça compromisso com qualidade no transporte rodoviário...</p>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                                <div class="flex flex-col md:flex-row">
+                                    <img src="https://via.placeholder.com/300x200?text=Notícia+2" alt="Notícia 2" class="w-full md:w-1/3 h-48 object-cover">
+                                    <div class="p-4 md:w-2/3">
+                                        <h4 class="text-xl font-bold text-blue-900 mb-2">Novo centro de distribuição em São Paulo</h4>
+                                        <p class="text-gray-600">Estrutura de 5.000 m² vai agilizar entregas na região metropolitana...</p>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                                <div class="flex flex-col md:flex-row">
+                                    <img src="https://via.placeholder.com/300x200?text=Notícia+3" alt="Notícia 3" class="w-full md:w-1/3 h-48 object-cover">
+                                    <div class="p-4 md:w-2/3">
+                                        <h4 class="text-xl font-bold text-blue-900 mb-2">CHTERRA recebe prêmio de excelência logística</h4>
+                                        <p class="text-gray-600">Pelo terceiro ano consecutivo, empresa é reconhecida por seus indicadores de desempenho...</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <a href="#" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                                Ver Todas as Notícias
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe class="w-full h-96" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-blue-900 mb-2">Conheça a CHTERRA</h3>
+                                <p class="text-gray-600">Assista ao nosso vídeo institucional e descubra como podemos ajudar sua empresa com soluções logísticas completas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 px-4 bg-white">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Dúvidas Frequentes</h2>
+                
+                <div class="space-y-4">
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-blue-900">Quais são os horários de atendimento da CHTERRA?</span>
+                            <i class="fas fa-plus text-blue-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Nosso atendimento ao cliente funciona de segunda a sexta, das 8h às 18h, e aos sábados das 8h às 12h. Para emergências fora desse horário, temos uma equipe disponível 24/7 pelo telefone (11) 93222-3533.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-blue-900">Como solicitar um orçamento de transporte rodoviário?</span>
+                            <i class="fas fa-plus text-blue-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Você pode solicitar um orçamento através do nosso site na seção "Orçamentos", pelo e-mail comercial@chterra.com.br ou pelo telefone (11) 93222-3533. Nos informe origem, destino, tipo de carga e volume que retornaremos com uma proposta em até 24 horas úteis.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-blue-900">Quais documentos são necessários para locação de máquinas?</span>
+                            <i class="fas fa-plus text-blue-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Para locação de máquinas, solicitamos: CNPJ da empresa, contrato social atualizado, comprovante de endereço, RG e CPF do responsável legal, e certidões negativas de débitos. Em alguns casos, pode ser necessário apresentar garantias adicionais.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-blue-900">A CHTERRA faz transporte de cargas perigosas?</span>
+                            <i class="fas fa-plus text-blue-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Sim, temos frota especializada e equipe treinada para transporte de cargas perigosas, seguindo todas as normas da ANTT e órgãos ambientais. Nossos veículos possuem todos os equipamentos de segurança necessários e documentação em dia.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-blue-900">Quais são as formas de pagamento aceitas?</span>
+                            <i class="fas fa-plus text-blue-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Aceitamos todas as formas de pagamento: boleto bancário, cartão de crédito (em até 12x), transferência bancária, PIX e cheques (com análise prévia). Para clientes corporativos, oferecemos condições especiais com prazo de até 30 dias.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-blue-900">Como faço para rastrear minha carga?</span>
+                            <i class="fas fa-plus text-blue-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Todos os nossos veículos possuem rastreamento via satélite 24 horas. Você pode acompanhar sua carga através do nosso portal do cliente, onde terá acesso em tempo real à localização e status da entrega. Também enviamos atualizações por e-mail e SMS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600 mb-4">Não encontrou sua dúvida? Entre em contato conosco!</p>
+                    <a href="#contact" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Entre em Contato</h2>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 bg-blue-900 text-white p-8">
+                            <h3 class="text-2xl font-bold mb-4">Informações de Contato</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">Endereço</h4>
+                                        <p>Av. das Nações Unidas, 1234<br>São Paulo - SP<br>CEP 04578-000</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-phone-alt mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">Telefone</h4>
+                                        <p>(11) 93222-3533</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-envelope mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">E-mail</h4>
+                                        <p>contato@chterra.com.br</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-clock mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">Horário de Atendimento</h4>
+                                        <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-bold mb-2">Siga-nos</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-whatsapp fa-lg"></i></a>
+                                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-linkedin fa-lg"></i></a>
+                                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-facebook fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-blue-900">Envie sua Mensagem</h3>
+                            <form id="contactForm" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-1">Nome Completo</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-gray-700 mb-1">Telefone</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-gray-700 mb-1">Nome da Empresa</label>
+                                    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-1">E-mail</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-gray-700 mb-1">Mensagem</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-4 rounded-md transition duration-300">
+                                    Enviar Mensagem
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Work With Us Section -->
+        <section id="jobs" class="py-16 px-4 bg-white">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Trabalhe Conosco</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Faça parte de uma equipe comprometida com excelência e inovação no setor de transportes e logística.</p>
+                </div>
+                
+                <div class="bg-gray-100 rounded-lg p-8">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0">
+                            <img src="https://via.placeholder.com/500x300?text=Equipe+CHTERRA" alt="Equipe CHTERRA" class="w-full rounded-lg shadow-md">
+                        </div>
+                        <div class="md:w-1/2 md:pl-8">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-4">Venha fazer parte do nosso time!</h3>
+                            <p class="text-gray-700 mb-4">Na CHTERRA, valorizamos profissionais comprometidos, inovadores e que buscam crescimento contínuo. Oferecemos:</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Plano de carreira estruturado</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Benefícios competitivos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Ambiente de trabalho colaborativo</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Oportunidades de desenvolvimento profissional</span>
+                                </li>
+                            </ul>
+                            <a href="mailto:contato@chterra.com.br?subject=Currículo" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                                Envie seu currículo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Budget Section -->
+        <section class="py-16 px-4 bg-gray-100">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-2">Solicite um Orçamento</h2>
+                    <p class="text-xl text-gray-600">Preencha os dados abaixo e receba uma proposta personalizada</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-blue-900 text-white p-4 text-center">
+                            <h3 class="text-xl font-bold">Transporte Rodoviário</h3>
+                        </div>
+                        <div class="p-6">
+                            <form id="transportForm" class="space-y-4">
+                                <div>
+                                    <label for="origin" class="block text-gray-700 mb-1">Local de Coleta</label>
+                                    <input type="text" id="origin" name="origin" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="destination" class="block text-gray-700 mb-1">Local de Entrega</label>
+                                    <input type="text" id="destination" name="destination" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="cargoType" class="block text-gray-700 mb-1">Tipo de Carga</label>
+                                    <select id="cargoType" name="cargoType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="general">Carga Geral</option>
+                                        <option value="fragile">Carga Frágil</option>
+                                        <option value="perishable">Carga Perecível</option>
+                                        <option value="dangerous">Carga Perigosa</option>
+                                        <option value="oversized">Carga Excedente</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="weight" class="block text-gray-700 mb-1">Peso Aproximado (kg)</label>
+                                    <input type="number" id="weight" name="weight" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="volume" class="block text-gray-700 mb-1">Volume (m³)</label>
+                                    <input type="number" id="volume" name="volume" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-4 rounded-md transition duration-300">
+                                    Solicitar Orçamento
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="bg-blue-900 text-white p-4 text-center">
+                            <h3 class="text-xl font-bold">Locação de Máquinas</h3>
+                        </div>
+                        <div class="p-6">
+                            <form id="machineForm" class="space-y-4">
+                                <div>
+                                    <label for="machineType" class="block text-gray-700 mb-1">Tipo de Máquina</label>
+                                    <select id="machineType" name="machineType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="excavator">Escavadeira Hidráulica</option>
+                                        <option value="bulldozer">Trator de Esteira</option>
+                                        <option value="crane">Guindaste</option>
+                                        <option value="loader">Carregadeira</option>
+                                        <option value="roller">Rolo Compactador</option>
+                                        <option value="truck">Caminhão Basculante</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="quantity" class="block text-gray-700 mb-1">Quantidade</label>
+                                    <input type="number" id="quantity" name="quantity" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="startDate" class="block text-gray-700 mb-1">Data de Início</label>
+                                    <input type="date" id="startDate" name="startDate" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="endDate" class="block text-gray-700 mb-1">Data de Término</label>
+                                    <input type="date" id="endDate" name="endDate" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="location" class="block text-gray-700 mb-1">Local de Uso (Endereço)</label>
+                                    <textarea id="location" name="location" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-4 rounded-md transition duration-300">
+                                    Solicitar Orçamento
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our History Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-2">Nossa História</h2>
+                    <p class="text-xl text-gray-600">30 anos de excelência em logística e transporte</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2">
+                        <img src="https://via.placeholder.com/600x400?text=CHTERRA+História" alt="Fundação CHTERRA" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Nossa Fundação</h3>
+                        <p class="text-gray-700 mb-4">A CHTERRA foi fundada em 1993 com apenas dois caminhões e uma visão clara: oferecer serviços de transporte rodoviário com qualidade, segurança e pontualidade.</p>
+                        <p class="text-gray-700">Começamos nossas operações na região de São Paulo, atendendo pequenas e médias empresas locais. Com o tempo, nosso compromisso com a excelência nos permitiu expandir para todo o território nacional.</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-2">
+                        <img src="https://via.placeholder.com/600x400?text=CHTERRA+Crescimento" alt="Crescimento CHTERRA" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="lg:w-1/2 lg:order-1">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Expansão e Diversificação</h3>
+                        <p class="text-gray-700 mb-4">Em 2005, identificamos a oportunidade de diversificar nossos serviços e entramos no mercado de locação de máquinas pesadas, atendendo ao setor de construção civil.</p>
+                        <p class="text-gray-700">Investimos em frota moderna e capacitação de pessoal, tornando-nos referência no segmento. Hoje contamos com mais de 60 máquinas disponíveis para locação em todo o país.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center bg-blue-900 text-white py-12 px-4 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Nossos Números</h3>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <div class="bg-white text-blue-900 p-6 rounded-lg shadow-md w-48">
+                            <div class="text-4xl font-bold counter" data-target="30">0</div>
+                            <div class="text-lg">Anos no mercado</div>
+                        </div>
+                        <div class="bg-white text-blue-900 p-6 rounded-lg shadow-md w-48">
+                            <div class="text-4xl font-bold counter" data-target="60000">0</div>
+                            <div class="text-lg">Entregas por dia</div>
+                        </div>
+                        <div class="bg-white text-blue-900 p-6 rounded-lg shadow-md w-48">
+                            <div class="text-4xl font-bold counter" data-target="60">0</div>
+                            <div class="text-lg">Máquinas disponíveis</div>
+                        </div>
+                        <div class="bg-white text-blue-900 p-6 rounded-lg shadow-md w-48">
+                            <div class="text-4xl font-bold counter" data-target="500">0</div>
+                            <div class="text-lg">Colaboradores</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Road Transport Section -->
+        <section class="py-16 px-4 bg-gray-100">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-2">Transportes Rodoviários</h2>
+                    <p class="text-xl text-gray-600">Frota moderna e diversificada para atender todas as suas necessidades</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Caminhão+Toco" alt="Caminhão Toco" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Caminhão Toco</h3>
+                            <p class="text-gray-700 mb-4">Ideal para cargas de até 6 toneladas e 14 metros cúbicos. Baú seco ou refrigerado disponível.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Saiba mais <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Caminhão+3/4" alt="Caminhão 3/4" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Caminhão 3/4</h3>
+                            <p class="text-gray-700 mb-4">Capacidade para até 10 toneladas e 20 metros cúbicos. Versátil para diversos tipos de carga.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Saiba mais <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Caminhão+Truck" alt="Caminhão Truck" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Caminhão Truck</h3>
+                            <p class="text-gray-700 mb-4">Transporte de até 14 toneladas e 30 metros cúbicos. Ideal para cargas pesadas e volumosas.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Saiba mais <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Carreta+LS" alt="Carreta LS" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Carreta LS</h3>
+                            <p class="text-gray-700 mb-4">Capacidade para até 25 toneladas e 60 metros cúbicos. Ideal para longas distâncias.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Saiba mais <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Carreta+Bitrem" alt="Carreta Bitrem" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Carreta Bitrem</h3>
+                            <p class="text-gray-700 mb-4">Transporte de até 33 toneladas e 90 metros cúbicos. Para cargas excepcionais.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Saiba mais <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Caminhão+Tanque" alt="Caminhão Tanque" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Caminhão Tanque</h3>
+                            <p class="text-gray-700 mb-4">Especializado em transporte de líquidos. Capacidade de até 30.000 litros.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Saiba mais <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Machine Rental Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-2">Locação de Máquinas</h2>
+                    <p class="text-xl text-gray-600">Equipamentos modernos e operadores qualificados para sua obra</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Escavadeira+Hidráulica" alt="Escavadeira Hidráulica" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Escavadeira Hidráulica</h3>
+                            <p class="text-gray-700 mb-4">Modelos de 8 a 45 toneladas. Ideal para escavações profundas e movimentação de terra.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Solicitar Orçamento <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Trator+de+Esteira" alt="Trator de Esteira" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Trator de Esteira</h3>
+                            <p class="text-gray-700 mb-4">Para terraplanagem e compactação de solo. Disponíveis com lâmina ou ripper.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Solicitar Orçamento <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Guindaste" alt="Guindaste" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Guindaste</h3>
+                            <p class="text-gray-700 mb-4">Capacidade de 30 a 250 toneladas. Para içamento de cargas pesadas.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Solicitar Orçamento <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Carregadeira" alt="Carregadeira" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Carregadeira</h3>
+                            <p class="text-gray-700 mb-4">Modelos de 1 a 5 metros cúbicos. Para carregamento de materiais diversos.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Solicitar Orçamento <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Rolo+Compactador" alt="Rolo Compactador" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Rolo Compactador</h3>
+                            <p class="text-gray-700 mb-4">Para compactação de solo e asfalto. Disponíveis em vários pesos e tipos.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Solicitar Orçamento <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://via.placeholder.com/600x400?text=Caminhão+Basculante" alt="Caminhão Basculante" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Caminhão Basculante</h3>
+                            <p class="text-gray-700 mb-4">Para transporte de terra, entulho e materiais de construção. Capacidade de 10 a 30 m³.</p>
+                            <a href="#" class="text-blue-900 font-medium hover:text-blue-700">Solicitar Orçamento <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Differentiators Section -->
+        <section class="py-16 px-4 bg-blue-900 text-white">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2">Nossos Diferenciais</h2>
+                    <p class="text-xl opacity-80">O que nos torna a melhor escolha para sua empresa</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-blue-800 bg-opacity-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-shield-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Segurança em Primeiro Lugar</h3>
+                                <p class="opacity-80">Nossos motoristas e operadores passam por treinamentos constantes e nossos veículos e máquinas possuem manutenção preventiva rigorosa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-800 bg-opacity-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Pontualidade Garantida</h3>
+                                <p class="opacity-80">Comprometimento com prazos é nossa marca registrada. Nossos índices de atraso são inferiores a 1%.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-800 bg-opacity-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marked-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Cobertura Nacional</h3>
+                                <p class="opacity-80">Atendemos todo o território nacional com frota própria e parceiros estratégicos em todas as regiões.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-800 bg-opacity-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-headset text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Atendimento Personalizado</h3>
+                                <p class="opacity-80">Cada cliente tem um consultor dedicado para acompanhar suas operações e garantir total satisfação.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-800 bg-opacity-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-leaf text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Sustentabilidade</h3>
+                                <p class="opacity-80">Frota moderna com baixa emissão de poluentes e programas de compensação ambiental.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-800 bg-opacity-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Tecnologia de Ponta</h3>
+                                <p class="opacity-80">Rastreamento via satélite, monitoramento em tempo real e sistemas de gestão logística integrados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 text-yellow-500">Área do Cliente</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Orçamentos</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Transportes Rodoviários</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Locação de Máquinas</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Área do Cliente</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 text-yellow-500">A CHTERRA</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Quem Somos</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Notícias</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Contato</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 text-yellow-500">Atendimento ao Cliente</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-yellow-500"></i>
+                            <span>+55 11 93222-3533</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i>
+                            <span>contato@chterra.com.br</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i>
+                            <span>Av. das Nações Unidas, 1234<br>São Paulo - SP</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-2 text-yellow-500"></i>
+                            <span>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-700 my-6">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>© 2025 CHTERRA – Todos os direitos reservados</p>
+                </div>
+                
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <span>Desenvolvido por</span>
+                    <img src="https://via.placeholder.com/100x30?text=Dev+Logo" alt="Desenvolvedora" class="h-6">
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    <a href="#" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            let currentIndex = 0;
+            let intervalId;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselDots.forEach(dot => dot.classList.remove('bg-white', 'bg-opacity-75'));
+                
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('bg-white', 'bg-opacity-75');
+                currentIndex = index;
+            }
+            
+            function nextSlide() {
+                let newIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(newIndex);
+            }
+            
+            function prevSlide() {
+                let newIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+                showSlide(newIndex);
+            }
+            
+            function startAutoPlay() {
+                intervalId = setInterval(nextSlide, 5000);
+            }
+            
+            function stopAutoPlay() {
+                clearInterval(intervalId);
+            }
+            
+            // Initialize
+            showSlide(0);
+            startAutoPlay();
+            
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+            
+            carouselDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    showSlide(parseInt(dot.dataset.index));
+                    stopAutoPlay();
+                    startAutoPlay();
+                });
+            });
+            
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items first
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question i').classList.remove('fa-minus');
+                        i.querySelector('.faq-question i').classList.add('fa-plus');
+                    });
+                    
+                    // Toggle current item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                        question.querySelector('i').classList.remove('fa-plus');
+                        question.querySelector('i').classList.add('fa-minus');
+                    }
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const company = document.getElementById('company').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                const whatsappMessage = `Olá, meu nome é ${name} (${company}). ${message}. Meu telefone é ${phone} e meu e-mail ${email}.`;
+                
+                window.location.href = `https://api.whatsapp.com/send?phone=5511932223533&text=${encodeURIComponent(whatsappMessage)}`;
+            });
+            
+            // Budget forms
+            const transportForm = document.getElementById('transportForm');
+            const machineForm = document.getElementById('machineForm');
+            
+            transportForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Área em desenvolvimento. Em breve você poderá solicitar orçamentos diretamente pelo site.');
+            });
+            
+            machineForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Área em desenvolvimento. Em breve você poderá solicitar orçamentos diretamente pelo site.');
+            });
+            
+            // Counter animation
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            }
+            
+            // Start counter animation when section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const counterSection = document.querySelector('.bg-blue-900.text-white.py-12.px-4.rounded-lg.shadow-lg');
+            if (counterSection) {
+                observer.observe(counterSection);
+            }
+            
+            // Mobile menu toggle (if needed)
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
