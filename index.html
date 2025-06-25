@@ -43,16 +43,17 @@
         .counter {
             transition: all 1s ease;
         }
+
     </style>
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <!-- Top Bar -->
-        <div class="bg-blue-900 text-white py-2 px-4">
+        <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="text-white py-1 px-4">
             <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-2 md:mb-0">
-                    <img src="https://via.placeholder.com/150x50?text=CHTERRA" alt="CHTERRA Logo" class="h-8">
+                    <img src="assets/logoHeader.webp" alt="CHTERRA Logo" class="h-6">
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#faq" class="text-sm hover:text-blue-200">Dúvidas Frequentes</a>
@@ -60,9 +61,9 @@
                     <a href="#jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
                 </div>
                 <div class="flex items-center space-x-4 mt-2 md:mt-0">
-                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/ch.terra/" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511981651780" class="text-white hover:text-blue-200"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511981651780" class="text-white hover:text-blue-200"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -72,34 +73,34 @@
             <div class="container mx-auto">
                 <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
                     <li class="dropdown relative">
-                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                        <a href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
                             Área do Cliente <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </a>
                         <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
-                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Orçamentos</a></li>
-                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Notícias</a></li>
+                            <li><a href="#Orçamento" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Orçamentos</a></li>
+                            <li><a href="#Notícia" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Notícias</a></li>
                         </ul>
                     </li>
                     <li class="dropdown relative">
-                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                        <a href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
                             A CHTERRA <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </a>
                         <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
-                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Quem Somos</a></li>
-                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Contato</a></li>
+                            <li><a href="#Historia" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Quem Somos</a></li>
+                            <li><a href="#Contato" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Contato</a></li>
                         </ul>
                     </li>
                     <li class="dropdown relative">
-                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                        <a href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
                             Serviços <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </a>
                         <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
-                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Transportes Rodoviários</a></li>
-                            <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Locação de Máquinas</a></li>
+                            <li><a href="#Transportes" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Transportes Rodoviários</a></li>
+                            <li><a href="#Locação" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Locação de Máquinas</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="text-blue-900 hover:text-blue-700 font-medium">Diferenciais</a>
+                        <a href="#Diferenciais" class="text-black-900 hover:text-orange-500 font-medium">Diferenciais</a>
                     </li>
                 </ul>
             </div>
@@ -111,49 +112,36 @@
         <!-- Hero Carousel -->
         <section class="relative w-full h-96 md:h-screen overflow-hidden">
             <div class="carousel-item active relative w-full h-full">
-                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
-                <img src="https://via.placeholder.com/1920x1080?text=Transporte+Rodoviário" alt="Transporte Rodoviário" class="w-full h-full object-cover">
+                <div class="absolute inset-0  opacity-20"></div>
+                <img src="./assets/transportes.webp" alt="Transporte Rodoviário" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                     <div class="text-white max-w-2xl">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Transporte Rodoviário</h1>
+                        <h1 class=" text-4xl md:text-6xl font-bold mb-4">Transporte Rodoviário</h1>
                         <p class="text-xl md:text-2xl mb-8">Soluções logísticas completas para sua empresa</p>
-                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Saiba Mais</a>
+                        <a href="#Transportes" style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="hover:bg-yellow-600 text-whithe-900 font-bold py-3 px-10 rounded-full transition duration-300">Saiba Mais</a>
                     </div>
                 </div>
             </div>
             
             <div class="carousel-item relative w-full h-full">
-                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
-                <img src="https://via.placeholder.com/1920x1080?text=Locação+de+Máquinas" alt="Locação de Máquinas" class="w-full h-full object-cover">
+                <div class="absolute inset-0  opacity-20"></div>
+                <img src="assets/maquinas.webp" alt="Locação de Máquinas" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                     <div class="text-white max-w-2xl">
                         <h1 class="text-4xl md:text-6xl font-bold mb-4">Locação de Máquinas</h1>
                         <p class="text-xl md:text-2xl mb-8">Equipamentos modernos para sua obra</p>
-                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Solicitar Orçamento</a>
+                        <a href="#Locação" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
             
             <div class="carousel-item relative w-full h-full">
-                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
-                <img src="https://via.placeholder.com/1920x1080?text=Apresentação+Institucional" alt="Apresentação Institucional" class="w-full h-full object-cover">
+                <div class="absolute inset-0  opacity-20"></div>
+                <img src="./assets/valion.webp" alt="Apresentação Institucional" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                     <div class="text-white max-w-2xl">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">CHTERRA</h1>
-                        <p class="text-xl md:text-2xl mb-8">30 anos de excelência em logística</p>
-                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="carousel-item relative w-full h-full">
-                <div class="absolute inset-0 bg-blue-900 opacity-50"></div>
-                <img src="https://via.placeholder.com/1920x1080?text=Condições+de+Pagamento" alt="Condições de Pagamento" class="w-full h-full object-cover">
-                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
-                    <div class="text-white max-w-2xl">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Condições Especiais</h1>
-                        <p class="text-xl md:text-2xl mb-8">Flexibilidade para atender sua necessidade</p>
-                        <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300">Conheça</a>
+                        <p class="text-xl md:text-2xl mb-9">30 anos de excelência em logística</p>
+                        <a href="#" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
                     </div>
                 </div>
             </div>
@@ -177,15 +165,15 @@
         <section class="py-12 px-4">
             <div class="container mx-auto">
                 <div class="flex flex-col md:flex-row gap-6">
-                    <a href="#" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
-                        <img src="https://via.placeholder.com/800x500?text=Transporte+Rodoviário" alt="Transporte Rodoviário" class="w-full h-64 md:h-80 object-cover">
-                        <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+                    <a href="#Transportes" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                        <img src="assets/transportes.webp" alt="Transporte Rodoviário" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
                             <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Transporte Rodoviário</h3>
                         </div>
                     </a>
-                    <a href="#" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
-                        <img src="https://via.placeholder.com/800x500?text=Locação+de+Máquinas" alt="Locação de Máquinas" class="w-full h-64 md:h-80 object-cover">
-                        <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center">
+                    <a href="#Locação" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                        <img src="assets/maquinas.webp" alt="Locação de Máquinas" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
                             <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Locação de Máquinas</h3>
                         </div>
                     </a>
@@ -194,7 +182,7 @@
         </section>
         
         <!-- News + Video Section -->
-        <section class="py-12 px-4 bg-gray-100">
+        <section id="Notícia" class="py-12 px-4 bg-gray-100">
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Últimas Notícias</h2>
                 
@@ -343,7 +331,7 @@
         </section>
         
         <!-- Contact Section -->
-        <section id="contact" class="py-16 px-4 bg-gray-100">
+        <section id="Contato" id="contact" class="py-16 px-4 bg-gray-100">
             <div class="container mx-auto max-w-4xl">
                 <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Entre em Contato</h2>
                 
@@ -470,7 +458,7 @@
         </section>
         
         <!-- Budget Section -->
-        <section class="py-16 px-4 bg-gray-100">
+        <section id="Orçamento" class="py-16 px-4 bg-gray-100">
             <div class="container mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-blue-900 mb-2">Solicite um Orçamento</h2>
@@ -563,7 +551,7 @@
         </section>
         
         <!-- Our History Section -->
-        <section class="py-16 px-4 bg-white">
+        <section id="Historia" class="py-16 px-4 bg-white">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-blue-900 mb-2">Nossa História</h2>
@@ -617,7 +605,7 @@
         </section>
         
         <!-- Road Transport Section -->
-        <section class="py-16 px-4 bg-gray-100">
+        <section id="Transportes" class="py-16 px-4 bg-gray-100">
             <div class="container mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-blue-900 mb-2">Transportes Rodoviários</h2>
@@ -683,7 +671,7 @@
         </section>
         
         <!-- Machine Rental Section -->
-        <section class="py-16 px-4 bg-white">
+        <section id="Locação" class="py-16 px-4 bg-white">
             <div class="container mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-blue-900 mb-2">Locação de Máquinas</h2>
@@ -749,7 +737,7 @@
         </section>
         
         <!-- Differentiators Section -->
-        <section class="py-16 px-4 bg-blue-900 text-white">
+        <section id="Diferenciais" class="py-16 px-4 bg-blue-900 text-white">
             <div class="container mx-auto max-w-4xl">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-2">Nossos Diferenciais</h2>
