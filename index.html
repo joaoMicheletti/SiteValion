@@ -486,11 +486,10 @@
                                     <label for="cargoType" class="block text-gray-700 mb-1">Tipo de Carga</label>
                                     <select id="cargoType" name="cargoType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                                         <option value="">Selecione...</option>
-                                        <option value="general">Carga Geral</option>
-                                        <option value="fragile">Carga Frágil</option>
-                                        <option value="perishable">Carga Perecível</option>
-                                        <option value="dangerous">Carga Perigosa</option>
-                                        <option value="oversized">Carga Excedente</option>
+                                        <option value="Carga Geral">Carga Geral</option>
+                                        <option value="Carga Frágil">Carga Frágil</option>
+                                        <option value="Carga Perecível">Carga Perecível</option>
+                                        <option value="Carga Perigosa">Carga Perigosa</option>
                                     </select>
                                 </div>
                                 <div>
@@ -518,12 +517,15 @@
                                     <label for="machineType" class="block text-gray-700 mb-1">Tipo de Máquina</label>
                                     <select id="machineType" name="machineType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                                         <option value="">Selecione...</option>
-                                        <option value="excavator">Escavadeira Hidráulica</option>
-                                        <option value="bulldozer">Trator de Esteira</option>
-                                        <option value="crane">Guindaste</option>
-                                        <option value="loader">Carregadeira</option>
-                                        <option value="roller">Rolo Compactador</option>
-                                        <option value="truck">Caminhão Basculante</option>
+                                        <option value="Escavadeira Hidráulica">Escavadeira Hidráulica</option>
+                                        <option value="bulldozer">Retroescavadeira</option>
+                                        <option value="Mini Carregadeira">Mini Carregadeira</option>
+                                        <option value="Mini Escavadeira">Mini Escavadeira</option>
+                                        <option value="Mini Rolo Compactador">Mini Rolo Compactador</option>
+                                        <option value="Rompedor">Rompedor</option>
+                                        <option value="Rolo Compactador">Rolo Compactador</option>
+                                        <option value="Caminhão Prancha">Caminhão Prancha</option>
+                                        <option value="Caminhão Basculante">Caminhão Basculante</option>
                                     </select>
                                 </div>
                                 <div>
@@ -1016,7 +1018,7 @@
                 
                 const whatsappMessage = `Olá, meu nome é ${name} (${company}). ${message}. Meu telefone é ${phone} e meu e-mail ${email}.`;
                 
-                window.location.href = `https://api.whatsapp.com/send?phone=5511932223533&text=${encodeURIComponent(whatsappMessage)}`;
+                window.location.href = `https://api.whatsapp.com/send?phone=5511981651780&text=${encodeURIComponent(whatsappMessage)}`;
             });
             
             // Budget forms
@@ -1025,12 +1027,29 @@
             
             transportForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                alert('Área em desenvolvimento. Em breve você poderá solicitar orçamentos diretamente pelo site.');
+                //alert('Área em desenvolvimento. Em breve você poderá solicitar orçamentos diretamente pelo site..');
+                let coleta = document.querySelector("#origin").value;
+                let entrega = document.querySelector("#destination").value;
+                let tipoCarga = document.querySelector("#cargoType").value;
+                let pesoCarga = document.querySelector("#weight").value;
+                let volumeCarga = document.querySelector("#volume").value;
+
+                const whatsappMessageT = `Olá, Venho atrávez do site "VALION" e gostaria de uma proposta, segue ingformações:  *Local de Coleta:*(${coleta}). *Local de Destino:*${entrega}. *Tipo da carga:*${tipoCarga}. *Peso aproximado:*${pesoCarga}. *Volume: ${volumeCarga}`;
+                
+                window.location.href = `https://api.whatsapp.com/send?phone=5511981651780&text=${encodeURIComponent(whatsappMessageT)}`;
             });
             
             machineForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                alert('Área em desenvolvimento. Em breve você poderá solicitar orçamentos diretamente pelo site.');
+                let maquina = document.querySelector("#machineType").value;
+                let quantidade = document.querySelector("#quantity").value;
+                let inicioT = document.querySelector("#startDate").value;
+                let terminoT = document.querySelector("#endDate").value;
+                let endereço = document.querySelector("#location").value;
+                
+                const Maquinas = `Olá, Venho atrávez do site "VALION" e gostaria de uma proposta, segue ingformações: *Maquina: *${maquina}. *Quantidade: *${quantidade}. *Data inicial: *${inicioT}. *Data Termino: *${terminoT}. *Enderço: *${endereço}.`;
+                
+                window.location.href = `https://api.whatsapp.com/send?phone=5511981651780&text=${encodeURIComponent(Maquinas)}`;
             });
             
             // Counter animation
