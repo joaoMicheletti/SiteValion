@@ -43,6 +43,17 @@
         .counter {
             transition: all 1s ease;
         }
+        @media(max-width: 800px){
+            #Mobille {
+                display: flex;
+                flex-direction: row;
+                font-size: 12px;
+                justify-content: space-between;
+            }
+            #P1{
+                margin-top: 8px;
+            }
+        }
 
     </style>
 </head>
@@ -69,11 +80,11 @@
         </div>
         
         <!-- Main Navigation -->
-        <nav class="bg-white py-3 px-4">
-            <div class="container mx-auto">
-                <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+        <nav  class="bg-white py-3 px-4">
+            <div  class="container mx-auto">
+                <ul id="Mobille" class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
                     <li class="dropdown relative">
-                        <a href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
+                        <a id="P1" href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
                             Área do Cliente <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </a>
                         <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
@@ -140,7 +151,9 @@
                 <img src="./assets/valion.webp" alt="Apresentação Institucional" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                     <div class="text-white max-w-2xl">
-                        <p class="text-xl md:text-2xl mb-9">30 anos de excelência em logística</p>
+                        <img src="./assets/logoHeader.webp"/>
+                        <br/>
+                        <p class="text-xl md:text-2xl mb-9">11 anos de excelência em logística</p>
                         <a href="#" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
                     </div>
                 </div>
@@ -904,7 +917,7 @@
                 
                 <div class="flex items-center space-x-4 mb-4 md:mb-0">
                     <span>Desenvolvido por</span>
-                    <img src="https://via.placeholder.com/100x30?text=Dev+Logo" alt="Desenvolvedora" class="h-6">
+                    <img src="assets/LogoC.webp" alt="Desenvolvedora" class="h-6">
                 </div>
                 
                 <div class="flex space-x-4">
