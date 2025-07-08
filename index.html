@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHTERRA - Transportes e Locação de Máquinas</title>
+    <title>______VALION______ Transportes e Locação de Máquinas</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -54,6 +55,35 @@
                 margin-top: 8px;
             }
         }
+        #ClienteSection h1 {
+            text-align: center;
+        }
+        .ContainerClientes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 4 colunas iguais */
+            gap: 20px;
+            padding: 20px;
+        }
+        .cardCliente {
+            background: linear-gradient(180deg, #cb4017, #f28b0c);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+        }.cardCliente:hover {
+            box-shadow: 0PX 0px 10px rgba(0, 0, 0, 0.753);
+        }
+        .cardCliente img {
+            width: 30%;
+            margin: 10px auto;
+            display: block;
+        }
+        .nomeCliente {
+            font-weight: 600;
+            color: white;
+        }
+
 
     </style>
 </head>
@@ -567,7 +597,7 @@
             </div>
         </section>
         
-        <!-- Our History Section -->
+        <!-- Our History Section @CRISTATUS31PAVOA-->
         <section id="Historia" class="py-16 px-4 bg-white">
             <div class="container mx-auto max-w-6xl">
                 <div class="text-center mb-12">
@@ -618,6 +648,49 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section id="ClienteSection" class="py-16 px-4 bg-gray-100">
+            <h1 class="text-2xl font-bold text-black-900 mb-4">Quem Confia na VALION</h1>
+            <div class="ContainerClientes">
+                <div class="cardCliente">
+                    <img src="./assets/clientes/igreja.webp" alt="logoClietne" />
+                    <h4 class="nomeCliente">IGREJA MESSIÂNICA DO BRASIL<br/></h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/CYRELLA.WEBP" alt="logoClietne" />
+                    <h4 class="nomeCliente">CYRELA</h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/Lineal.WEBP" alt="logoClietne" />
+                    <h4 class="nomeCliente">LINEAL</h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/infomov.webp" alt="logoClietne" />
+                    <h4 class="nomeCliente">INFOMOV</h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/faae.webp" alt="logoClietne" />
+                    <h4 class="nomeCliente">FAAE PROJETOS</h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/brz.webp" alt="logoClietne" />
+                    <h4 class="nomeCliente">BRZ EMPREENDIMENTOS </h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/HELBO.webp" alt="logoClietne" />
+                    <h4 class="nomeCliente">HELLBOR</h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/econ.webp" alt="logoClietne" />
+                    <h4 class="nomeCliente">ENCON</h4>
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/vita.webp" alt="logoClietne" />
+                    <h4 class="nomeCliente">VITA AMBIENTAL</h4>
+                </div>
+                
+
             </div>
         </section>
         
