@@ -44,15 +44,21 @@
         .counter {
             transition: all 1s ease;
         }
+        #VAlionN3{
+            margin-top: 20px;
+        }
         @media(max-width: 800px){
             #Mobille {
                 display: flex;
                 flex-direction: row;
-                font-size: 12px;
+                font-size: 10px;
                 justify-content: space-between;
             }
             #P1{
                 margin-top: 8px;
+            }
+            #VAlionN3{
+            margin-top: 0px;
             }
         }
         #ClienteSection h1 {
@@ -90,6 +96,14 @@
                 grid-template-columns: repeat(2, 1fr); 
             }
         }
+        .lstaLink {
+            display: flex;
+            flex-direction: row;
+        }
+        #Historia{
+            width: 90%;
+            margin-left: 5%;
+        }
 
 
     </style>
@@ -101,54 +115,30 @@
         <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="text-white py-1 px-4">
             <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-2 md:mb-0">
-                    <img src="assets/logoHeader.webp" alt="CHTERRA Logo" class="h-6">
+                    <a href="#X"><img src="assets/logoHeader.webp" alt="VALION Logo" class="h-6"></a>
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#faq" class="text-sm hover:text-blue-200">Dúvidas Frequentes</a>
-                    <a href="#contact" class="text-sm hover:text-blue-200">Contato</a>
+                    <a href="#Contato" class="text-sm hover:text-blue-200">Contato</a>
                     <a href="#jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
                 </div>
-                <div class="flex items-center space-x-4 mt-2 md:mt-0">
-                    <a href="https://www.instagram.com/ch.terra/" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
-                    <a href="https://api.whatsapp.com/send/?phone=5511981651780" class="text-white hover:text-blue-200"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://api.whatsapp.com/send/?phone=5511981651780" class="text-white hover:text-blue-200"><i class="fab fa-linkedin"></i></a>
+                <div id="XXX" class="flex items-center space-x-4 mt-2 md:mt-0">
+                    <a target="_blank" href="https://www.instagram.com/valion.oficial/" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://api.whatsapp.com/send/?phone=5511981651780" class="text-white hover:text-blue-200"><i class="fab fa-whatsapp"></i></a>
+                    <a target="_blank" href="https://api.whatsapp.com/send/?phone=5511981651780" class="text-white hover:text-blue-200"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
         
         <!-- Main Navigation -->
-        <nav  class="bg-white py-3 px-4">
+        <nav  class="bg-white py-1 px-4">
             <div  class="container mx-auto">
                 <ul id="Mobille" class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
-                    <li class="dropdown relative">
-                        <a id="P1" href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
-                            Área do Cliente <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
-                            <li><a href="#Orçamento" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Orçamentos</a></li>
-                            <li><a href="#Notícia" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Notícias</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown relative">
-                        <a href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
-                            A CHTERRA <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
-                            <li><a href="#Historia" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Quem Somos</a></li>
-                            <li><a href="#Contato" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Contato</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown relative">
-                        <a href="#" class="text-black-900 hover:text-orange-500 font-medium flex items-center">
-                            Serviços <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </a>
-                        <ul class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-1 py-1 w-48">
-                            <li><a href="#Transportes" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Transportes Rodoviários</a></li>
-                            <li><a href="#Locação" class="block px-4 py-2 text-black-800 hover:bg-blue-100">Locação de Máquinas</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#Diferenciais" class="text-black-900 hover:text-orange-500 font-medium">Diferenciais</a>
+                    <li class="lstaLink">
+                        <a href="#Historia" class="block px-4 py-1 text-black-800 hover:bg-blue-100">A VALION</a>
+                        <a href="#Transportes" class="block px-4 py-1 text-black-800 hover:bg-blue-100">Transportes</a>
+                        <a href="#Locação" class="block px-4 py-1 text-black-800 hover:bg-blue-100">Locação</a>
+                        <a href="#Diferenciais" class="block px-4 py-1 text-black-800 hover:bg-blue-100">Diferenciais</a>
                     </li>
                 </ul>
             </div>
@@ -158,14 +148,27 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Carousel -->
-        <section class="relative w-full h-96 md:h-screen overflow-hidden">
+        <section id="X" class="relative w-full h-96 md:h-screen overflow-hidden">
+            <div class="carousel-item relative w-full h-full">
+                <div class="absolute inset-0  opacity-20"></div>
+                <img src="./assets/valion.webp" alt="Apresentação Institucional" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <img src="./assets/logoHeader.webp"/>
+                        <br/>
+                        <p class="text-xl md:text-2xl mb-9">11 anos de excelência</p>
+                        <a href="#Historia" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="carousel-item active relative w-full h-full">
                 <div class="absolute inset-0  opacity-20"></div>
                 <img src="./assets/transportes.webp" alt="Transporte Rodoviário" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                     <div class="text-white max-w-2xl">
                         <h1 class=" text-4xl md:text-6xl font-bold mb-4">Transporte Rodoviário</h1>
-                        <p class="text-xl md:text-2xl mb-8">Soluções logísticas completas para sua empresa</p>
+                        <p class="text-xl md:text-2xl mb-8">Soluções completas para sua empresa</p>
                         <a href="#Transportes" style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="hover:bg-yellow-600 text-whithe-900 font-bold py-3 px-10 rounded-full transition duration-300">Saiba Mais</a>
                     </div>
                 </div>
@@ -178,24 +181,10 @@
                     <div class="text-white max-w-2xl">
                         <h1 class="text-4xl md:text-6xl font-bold mb-4">Locação de Máquinas</h1>
                         <p class="text-xl md:text-2xl mb-8">Equipamentos modernos para sua obra</p>
-                        <a href="#Locação" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Solicitar Orçamento</a>
+                        <a href="#Locação" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Saiba Mais</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="carousel-item relative w-full h-full">
-                <div class="absolute inset-0  opacity-20"></div>
-                <img src="./assets/valion.webp" alt="Apresentação Institucional" class="w-full h-full object-cover">
-                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
-                    <div class="text-white max-w-2xl">
-                        <img src="./assets/logoHeader.webp"/>
-                        <br/>
-                        <p class="text-xl md:text-2xl mb-9">11 anos de excelência em logística</p>
-                        <a href="#" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
-                    </div>
-                </div>
-            </div>
-            
+            </div>          
             <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black-900 p-3 rounded-full">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -215,13 +204,13 @@
         <section class="py-12 px-4">
             <div class="container mx-auto">
                 <div class="flex flex-col md:flex-row gap-6">
-                    <a href="#Transportes" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                    <a href="https://chterra-transportes.netlify.app/" target="_blank" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
                         <img src="assets/transportes.webp" alt="Transporte Rodoviário" class="w-full h-64 md:h-80 object-cover">
                         <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
                             <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Transporte Rodoviário</h3>
                         </div>
                     </a>
-                    <a href="#Locação" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                    <a href="https://ch-terra-maquinas.netlify.app/" target="_blank" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
                         <img src="assets/maquinas.webp" alt="Locação de Máquinas" class="w-full h-64 md:h-80 object-cover">
                         <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
                             <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Locação de Máquinas</h3>
@@ -230,6 +219,248 @@
                 </div>
             </div>
         </section>
+         <!-- Our History Section @CRISTATUS31PAVOA-->
+        <section id="Historia" class="py-16 px-4 bg-white">
+            <br/><br/>
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-2">Nossa História</h2>
+                    <p class="text-xl text-gray-600">+ de 10 anos de excelência</p>
+                </div>
+                
+                <div id="Historia" class="lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/1">
+                        <img src="assets/capa.webp" alt="Fundação VALION" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="lg:w-1/1">
+                        <br/>
+                        <p class="text-black mb-4">
+                            A história da VALION começa em um lugar muito especial: o colégio. Foi lá que dois jovens, com apenas 14 anos, se conheceram e, desde aquele momento, sentiram uma conexão profunda. Aos 16 anos, começaram a namorar, e a partir daí, a jornada de suas vidas e sonhos se entrelaçou, criando uma base sólida para tudo o que viria a seguir.
+                            Com o tempo, o desejo de crescer e expandir se tornou algo inevitável. O sonho de empreender surgia como um reflexo do desejo de alcançar mais, de transformar e de ajudar sua família de uma maneira concreta. Com um forte compromisso de fazer o bem, o casal nutria o sonho de criar algo grande, uma empresa que não apenas fosse bem-sucedida financeiramente, mas que também trouxesse felicidade e realização a todos ao seu redor.
+
+                            Ao longo dos anos, a confiança, a verdade e a transparência foram pilares que sustentaram o relacionamento pessoal e profissional. A união e o comprometimento com os objetivos, a lealdade ao propósito e a responsabilidade em todas as decisões criaram a essência da VALION.
+
+                            A empresa surgiu com uma missão clara: proporcionar soluções que não só transformassem o setor, mas que também criassem um ambiente de trabalho transparente e acolhedor. A visão sempre foi levar ao mundo não apenas um produto ou serviço de qualidade, mas a felicidade que vem de um trabalho bem-feito, e que, através disso, levasse o sucesso de volta para as famílias, para a comunidade e para todos os que fazem parte dessa jornada.
+
+                            A VALION é mais do que uma empresa. É o reflexo de um sonho de vida, de um amor que construiu não apenas uma história de sucesso, mas um legado de valores e princípios imutáveis. Um legado de confiança, transparência e união, que cresce a cada dia com a missão de impactar positivamente a vida das pessoas.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-2">
+                        <img src="assets/missao.webp" alt="Crescimento VALION" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="lg:w-1/2 lg:order-1">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossa Missão</h3>
+                        <p class="text-black">
+                            A missão da VALION é inspirar e despertar a mudança de mentalidade em cada indivíduo, 
+                            mostrando que todos têm uma missão comum: ser agentes de transformação em um mundo mais feliz, 
+                            saudável e próspero. Acreditamos que, com determinação, persistência e dedicação, é possível 
+                            criar um "paraíso terrestre", promovendo a tranquilidade e o bem-estar de todos. Nosso 
+                            compromisso é com o bem da humanidade, movidos por amor, fé e altruísmo, buscando sempre 
+                            fazer o melhor para aqueles que confiam em nossa jornada.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-1">
+                        <img src="assets/visao.webp" alt="Crescimento VALION" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="lg:w-1/2 lg:order-2">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossa Visão</h3>
+                        <p class="text-black">
+                            Nossa visão na VALION é ser uma empresa referência em transformação, 
+                            criando um legado de impacto positivo para as futuras gerações. 
+                            Buscamos ser a força propulsora de mudanças significativas na vida 
+                            das pessoas, despertando o potencial de cada indivíduo para viver 
+                            com felicidade, equilíbrio e prosperidade. Queremos ser reconhecidos 
+                            por nossa capacidade de gerar um "paraíso terrestre", promovendo 
+                            uma sociedade mais justa, saudável e próspera, guiada por princípios 
+                            sólidos de fé, verdade e altruísmo. Através de nossa atuação, almejamos 
+                            construir um futuro onde todos tenham a oportunidade de viver sua 
+                            melhor versão e contribuir para o bem-estar coletivo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-2">
+                        <img src="assets/valores.webp" alt="Crescimento VALION" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="lg:w-1/2 lg:order-1">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossos Valores</h3>
+                        <p class="text-black">
+                            Na VALION, nossos valores são os pilares que sustentam todas as nossas ações e decisões. Eles refletem a essência da nossa jornada e o compromisso com um propósito maior.
+                            <br/>Deus – Acreditamos que nossa missão é guiada pela fé e pela confiança em Deus. Em tudo o que fazemos, buscamos ser instrumentos de sua vontade, honrando a vida e os seres ao nosso redor.
+                            <br/>Família – Valorizar a família é o alicerce de nossa empresa. Nossa força vem do apoio mútuo e do desejo de construir um legado de prosperidade e harmonia para as gerações futuras.
+                            <br/>Verdade – Acreditamos na transparência em todas as nossas relações. Agimos com honestidade, clareza e integridade, buscando sempre a verdade como base para nossas decisões e ações.
+                            <br/>Justiça – Em tudo o que fazemos, buscamos agir com justiça, tratando a todos com respeito, dignidade e equidade. Acreditamos que a justiça é essencial para promover um ambiente de confiança e harmonia
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiators Section -->
+        <section id="Diferenciais" class="py-16 px-4">
+            <br/><br/>
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2">Nossos Diferenciais</h2>
+                    <p class="text-xl opacity-80">O que nos torna a melhor escolha para sua empresa</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-shield-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Humanidade e Fé</h3>
+                                <p class="opacity-80 text-white">
+                                    Colocamos as pessoas em primeiro lugar, guiados pela fé e pelo 
+                                    desejo de transformar vidas com ações genuínas e amorosas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Transparência e Confiança</h3>
+                                <p class="opacity-80 text-white">
+                                    Priorizamos a honestidade e a clareza, criando um ambiente de 
+                                    confiança que fortalece nossas parcerias e relações.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marked-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Responsabilidade e Comprometimento</h3>
+                                <p class="opacity-80 text-white">
+                                    Assumimos a responsabilidade por nossos projetos com total comprometimento, garantindo resultados de alta qualidade
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-headset text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Bondade, Altruísmo e Qualidade</h3>
+                                <p class="opacity-80 text-white">
+                                    Trabalhamos com bondade e altruísmo, sem abrir mão da excelência e qualidade em todas as nossas entregas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-leaf text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Sustentabilidade</h3>
+                                <p class="opacity-80 text-white">Frota moderna com baixa emissão de poluentes e programas de compensação ambiental.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Tecnologia de Ponta</h3>
+                                <p class="opacity-80 text-white">Rastreamento via satélite, monitoramento em tempo real e sistemas de gestão logística integrados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/><br/>
+            <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="text-center  text-white py-12 px-4 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-6">Nossos Números</h3>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
+                        <div class="text-4xl font-bold counter" data-target="30">+ de 10</div>
+                        <div class="text-lg">Anos no mercado</div>
+                    </div>
+                    <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
+                        <div class="text-4xl font-bold counter" data-target="60000">XXX</div>
+                        <div class="text-lg">Empresas atendidas</div>
+                    </div>
+                    <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
+                        <div class="text-4xl font-bold counter" data-target="60">XXX</div>
+                        <div class="text-lg">Projetos realizados</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- nosso Clientes - qe confia na VAlion-->
+        <section id="ClienteSection" class="py-16 px-4 bg-gray-100">
+            <h1 class="text-2xl font-bold text-black-900 mb-4">Quem Confia na VALION</h1>
+            <div class="ContainerClientes">
+                <div class="cardCliente">
+                    <img src="./assets/clientes/igreja.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/entec.WEBP" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/piramidal.WEBP" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/Lineal.WEBP" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/HELBO.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/vita.webp" alt="logoClietne" />                 
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/faae.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/brz.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/meca.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/infomov.webp" alt="logoClietne" />                    
+                </div>                
+                <div class="cardCliente">
+                    <img src="./assets/clientes/econ.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/CYRELLA.WEBP" alt="logoClietne" />
+                </div>
+                
+
+            </div>
+        </section>
+
         
         <!-- News + Video Section -->
         <section id="Notícia" class="py-12 px-4 bg-gray-100">
@@ -243,8 +474,8 @@
                                 <div class="flex flex-col md:flex-row">
                                     <img src="./assets/frota.webp" alt="Notícia 1" class="w-full md:w-1/3 h-48 object-cover">
                                     <div class="p-4 md:w-2/3">
-                                        <h4 class="text-xl font-bold text-black-900 mb-2">CHTERRA amplia frota com novos caminhões</h4>
-                                        <p class="text-gray-600">Investimento de R$ 10 milhões reforça compromisso com qualidade no transporte rodoviário...</p>
+                                        <h4 class="text-xl font-bold text-black-900 mb-2">VALION amplia frota com novos caminhões</h4>
+                                        <p class="text-gray-600">Investimos em qualidade, inovação e tecnologia para oferecer aos nossos clientes toda a segurança e excelência.</p>
                                     </div>
                                 </div>
                             </article>
@@ -253,27 +484,21 @@
                                 <div class="flex flex-col md:flex-row">
                                     <img src="assets/maquina.webp" alt="Notícia 2" class="w-full md:w-1/3 h-48 object-cover">
                                     <div class="p-4 md:w-2/3">
-                                        <h4 class="text-xl font-bold text-black-900 mb-2">Valion amplia sua frota de máquinas</h4>
-                                        <p class="text-gray-600">Valion reforça sua capacidade de atendimento e amplia a disponibilidade de máquinas para locação em todo o estado.</p>
+                                        <h4 class="text-xl font-bold text-black-900 mb-2">VALION amplia sua frota de máquinas</h4>
+                                        <p class="text-gray-600">A VALION expande sua frota de máquinas, mantendo o compromisso com a excelência e desempenho de alta performance em todos os serviços oferecidos.</p>
                                     </div>
                                 </div>
                             </article>
                             
                             <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
                                 <div class="flex flex-col md:flex-row">
-                                    <img src="assets/NValion.webp" alt="Notícia 3" class="w-full md:w-1/3 h-48 object-cover">
+                                    <img id="VAlionN3" src="assets/NValion.webp" alt="Notícia 3" class="w-full md:w-1/3 h-48 object-cover">
                                     <div class="p-4 md:w-2/3">
                                         <h4 class="text-xl font-bold text-black-900 mb-2">VALION recebe prêmio de excelência</h4>
-                                        <p class="text-gray-600">Pelo terceiro ano consecutivo, empresa é reconhecida por seus indicadores de desempenho...</p>
+                                        <p class="text-gray-600">Pelo terceiro ano consecutivo, a empresa é reconhecida por seus indicadores excepcionais de desempenho, reforçando o compromisso constante com a qualidade, inovação e a satisfação dos nossos clientes. Este prêmio reflete nossa dedicação em oferecer soluções de alta performance e sempre superar as expectativas do mercado.</p>
                                     </div>
                                 </div>
                             </article>
-                        </div>
-                        
-                        <div class="mt-6 text-center">
-                            <a href="#" style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="inline-block   text-white font-bold py-4 px-10 rounded-full transition duration-300">
-                                Ver Todas as Notícias
-                            </a>
                         </div>
                     </div>
                     
@@ -283,8 +508,8 @@
                                 <iframe class="w-full h-96" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-black-900 mb-2">Conheça a    VALION</h3>
-                                <p class="text-gray-600">Assista ao nosso vídeo institucional e descubra como podemos ajudar sua empresa com soluções logísticas completas.</p>
+                                <h3 class="text-xl font-bold text-black-900 mb-2">Conheça a VALION</h3>
+                                <p class="text-gray-600">Assista ao nosso vídeo e descubra como podemos ajudar sua empresa.</p>
                             </div>
                         </div>
                     </div>
@@ -293,14 +518,15 @@
         </section>
         
         <!-- FAQ Section -->
-        <section id="faq" class="py-16 px-4 bg-white">
+        <section id="faq" class="py-16 px-4 ">
+            <br/><br/><br/>
             <div class="container mx-auto max-w-4xl">
                 <h2 class="text-3xl font-bold text-center mb-12 text-black-900">Dúvidas Frequentes</h2>
                 
                 <div class="space-y-4">
                     <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
                         <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
-                            <span class="font-medium text-black-900">Quais são os horários de atendimento da CHTERRA?</span>
+                            <span class="font-medium text-black-900">Quais são os horários de atendimento da VALION?</span>
                             <i class="fas fa-plus text-black-900"></i>
                         </button>
                         <div class="answer">
@@ -317,7 +543,7 @@
                         </button>
                         <div class="answer">
                             <div class="p-4 text-gray-700">
-                                Você pode solicitar um orçamento através do nosso site na seção "Orçamentos", pelo e-mail comercial@chterra.com.br ou pelo telefone +55 11 98165-1780. Nos informe origem, destino, tipo de carga e volume que retornaremos com uma proposta em até 24 horas úteis.
+                                Você pode solicitar um orçamento através do nosso site na seção "Orçamentos", pelo e-mail comercial@valion.com.br ou pelo telefone +55 11 98165-1780. Nos informe origem, destino, tipo de carga e volume que retornaremos com uma proposta em até 24 horas úteis.
                             </div>
                         </div>
                     </div>
@@ -330,30 +556,6 @@
                         <div class="answer">
                             <div class="p-4 text-gray-700">
                                 Para locação de máquinas, solicitamos: CNPJ da empresa, contrato social atualizado, comprovante de endereço, RG e CPF do responsável legal, e certidões negativas de débitos. Em alguns casos, pode ser necessário apresentar garantias adicionais.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
-                            <span class="font-medium text-black-900">A CHTERRA faz transporte de cargas perigosas?</span>
-                            <i class="fas fa-plus text-black-900"></i>
-                        </button>
-                        <div class="answer">
-                            <div class="p-4 text-gray-700">
-                                Sim, temos frota especializada e equipe treinada para transporte de cargas perigosas, seguindo todas as normas da ANTT e órgãos ambientais. Nossos veículos possuem todos os equipamentos de segurança necessários e documentação em dia.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
-                            <span class="font-medium text-black-900">Quais são as formas de pagamento aceitas?</span>
-                            <i class="fas fa-plus text-black-900"></i>
-                        </button>
-                        <div class="answer">
-                            <div class="p-4 text-gray-700">
-                                Aceitamos todas as formas de pagamento: boleto bancário, cartão de crédito (em até 12x), transferência bancária, PIX e cheques (com análise prévia). Para clientes corporativos, oferecemos condições especiais com prazo de até 30 dias.
                             </div>
                         </div>
                     </div>
@@ -379,9 +581,115 @@
                 </div>
             </div>
         </section>
+
+        <!-- Road Transport Section -->
+        <section id="Transportes" class="py-16 px-4 bg-gray-100"> <br/><br/>
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-2">Transportes Rodoviários</h2>
+                    <p class="text-xl text-gray-600">Frota moderna e diversificada para atender todas as suas necessidades</p>
+                </div>
+                <br/><br/>
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-2">
+                        <video  autoplay loop muted>
+                            <source src="assets/definitivo.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                    </div>
+                    <div class="lg:w-1/2 lg:order-1">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Descubra o Modal Porta a Porta</h3>
+                        <p class="text-black">
+                            Com o nosso serviço inovador de Modal Porta a Porta, oferecemos uma solução 
+                            prática e eficiente para levar seus produtos de forma segura e rápida, 
+                            diretamente até o destino final. Não perca tempo, otimize sua logística agora!.
+                        </p>
+                        <br/>
+                        <a href="https://chterra-transportes.netlify.app/" target="_blank" style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                            Confira mais informações e saiba como podemos ajudar seu negócio!
+                        </a>
+                    </div>
+                </div>                
+            </div>
+        </section>
+        
+        <!-- Machine Rental Section -->
+        <section id="Locação" class="py-16 px-4 bg-white"> <br/><br/>
+            <div class="container mx-auto">
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-2">Locação de Máquinas</h2>
+                    <p class="text-xl text-gray-600">Equipamentos modernos e operadores qualificados para sua obra</p>
+                </div>
+                <br/><br/>
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-1">
+                        <video  autoplay loop muted>
+                            <source src="assets/teste.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                    </div>
+                    <div class="lg:w-1/2 lg:order-2">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Conheça nosso serviço de Locação de Máquinas</h3>
+                        <p class="text-black">
+                            Oferecemos soluções flexíveis e eficientes de locação de máquinas para otimizar seus projetos. 
+                            Com equipamentos de alta qualidade, garantimos desempenho, segurança e agilidade para a sua obra.
+                        </p>
+                        <br/>
+                        <a href="https://ch-terra-maquinas.netlify.app/" target="_blank" style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                            Saiba mais sobre como podemos apoiar o seu projeto!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Work With Us Section -->
+        <section id="Jobs" class="py-16 px-4 bg-white">
+            <br/><br/>
+            <div id="Trabalhe" class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-4">Trabalhe Conosco</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Faça parte de uma equipe comprometida.</p>
+                </div>
+                
+                <div class="bg-gray-100 rounded-lg p-8">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0">
+                            <img src="assets/equipe.webp" alt="Equipe VALION" class="w-full rounded-lg shadow-md">
+                        </div>
+                        <div class="md:w-1/2 md:pl-8">
+                            <h3 class="text-2xl font-bold text-black-900 mb-4">Venha fazer parte do nosso time!</h3>
+                            <p class="text-gray-700 mb-4">Na VALION, valorizamos profissionais comprometidos, inovadores e que buscam crescimento contínuo. Oferecemos:</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Plano de carreira estruturado</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Benefícios competitivos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Ambiente de trabalho colaborativo</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Oportunidades de desenvolvimento profissional</span>
+                                </li>
+                            </ul>
+                            <a style="background: linear-gradient(180deg, #cb4017, #f28b0c);" href="mailto:contato@chterra.com.br?subject=Currículo" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                                Envie seu currículo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- Contact Section criar funcionalidade para enviar a mensagem personalizada para o whast do carlos -->
         <section id="Contato" id="contact" class="py-16 px-4 bg-gray-100">
+            <br/><br/>
             <div class="container mx-auto max-w-4xl">
                 <h2 class="text-3xl font-bold text-center mb-12 text-black-900">Entre em Contato</h2>
                 
@@ -410,7 +718,7 @@
                                     <i class="fas fa-envelope mt-1 mr-4"></i>
                                     <div>
                                         <h4 class="font-bold">E-mail</h4>
-                                        <p>contato@chterra.com.br</p>
+                                        <p>contato@valion.com.br</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
@@ -425,10 +733,10 @@
                             <div class="mt-8">
                                 <h4 class="font-bold mb-2">Siga-nos</h4>
                                 <div class="flex space-x-4">
-                                    <a href="https://www.instagram.com/ch.terra/" class="text-white hover:text-blue-200"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="https://www.instagram.com/valion.oficial/" class="text-white hover:text-blue-200"><i class="fab fa-instagram fa-lg"></i></a>
                                     <a href="https://api.whatsapp.com/send/?phone=5511981651780" target="_blank" class="text-white hover:text-blue-200"><i class="fab fa-whatsapp fa-lg"></i></a>
-                                    <a href="https://www.instagram.com/ch.terra/" class="text-white hover:text-blue-200"><i class="fab fa-linkedin fa-lg"></i></a>
-                                    <a href="https://www.instagram.com/ch.terra/" class="text-white hover:text-blue-200"><i class="fab fa-facebook fa-lg"></i></a>
+                                    <a href="https://www.instagram.com/valion.oficial/" class="text-white hover:text-blue-200"><i class="fab fa-linkedin fa-lg"></i></a>
+                                    <a href="https://www.instagram.com/valion.oficial/" class="text-white hover:text-blue-200"><i class="fab fa-facebook fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -466,50 +774,7 @@
             </div>
         </section>
         
-        <!-- Work With Us Section -->
-        <section id="jobs" class="py-16 px-4 bg-white">
-            <div class="container mx-auto max-w-4xl">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-black-900 mb-4">Trabalhe Conosco</h2>
-                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Faça parte de uma equipe comprometida com excelência e inovação no setor de transportes e logística.</p>
-                </div>
-                
-                <div class="bg-gray-100 rounded-lg p-8">
-                    <div class="md:flex items-center">
-                        <div class="md:w-1/2 mb-6 md:mb-0">
-                            <img src="assets/equipe.webp" alt="Equipe CHTERRA" class="w-full rounded-lg shadow-md">
-                        </div>
-                        <div class="md:w-1/2 md:pl-8">
-                            <h3 class="text-2xl font-bold text-black-900 mb-4">Venha fazer parte do nosso time!</h3>
-                            <p class="text-gray-700 mb-4">Na CHTERRA, valorizamos profissionais comprometidos, inovadores e que buscam crescimento contínuo. Oferecemos:</p>
-                            <ul class="space-y-2 mb-6">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Plano de carreira estruturado</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Benefícios competitivos</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Ambiente de trabalho colaborativo</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Oportunidades de desenvolvimento profissional</span>
-                                </li>
-                            </ul>
-                            <a style="background: linear-gradient(180deg, #cb4017, #f28b0c);" href="mailto:contato@chterra.com.br?subject=Currículo" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-                                Envie seu currículo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Budget Section funcção para enciar cotação pre definida-->
+        <!-- Budget Section funcção para enciar cotação pre definida
         <section id="Orçamento" class="py-16 px-4 bg-gray-100">
             <div class="container mx-auto">
                 <div class="text-center mb-12">
@@ -603,365 +868,29 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Our History Section @CRISTATUS31PAVOA-->
-        <section id="Historia" class="py-16 px-4 bg-white">
-            <div class="container mx-auto max-w-6xl">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-black-900 mb-2">Nossa História</h2>
-                    <p class="text-xl text-gray-600">11 anos de excelência em locação e transporte</p>
-                </div>
-                
-                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
-                    <div class="lg:w-1/2">
-                        <img src="assets/capa.webp" alt="Fundação VALION" class="w-full rounded-lg shadow-lg">
-                    </div>
-                    <div class="lg:w-1/2">
-                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossa Fundação</h3>
-                        <p class="text-gray-700 mb-4">A VALION foi fundada em 2014 com apenas dois caminhões e uma visão clara: oferecer serviços de transporte rodoviário com qualidade, segurança e pontualidade.</p>
-                        <p class="text-gray-700">Começamos nossas operações na região de São Paulo, atendendo pequenas e médias empresas locais. Com o tempo, nosso compromisso com a excelência nos permitiu expandir para todo o território nacional.</p>
-                    </div>
-                </div>
-                
-                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
-                    <div class="lg:w-1/2 lg:order-2">
-                        <img src="assets/creser.webp" alt="Crescimento CHTERRA" class="w-full rounded-lg shadow-lg">
-                    </div>
-                    <div class="lg:w-1/2 lg:order-1">
-                        <h3 class="text-2xl font-bold text-black-900 mb-4">Expansão e Diversificação</h3>
-                        <p class="text-gray-700 mb-4">Em 2005, identificamos a oportunidade de espandir nossos serviços.</p>
-                        <p class="text-gray-700">Investimos em frota moderna e capacitação de pessoal, tornando-nos referência no segmento. Hoje contamos com mais de 60 máquinas disponíveis para locação em todo o país.</p>
-                    </div>
-                </div>
-                
-                <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="text-center  text-white py-12 px-4 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6">Nossos Números</h3>
-                    <div class="flex flex-wrap justify-center gap-8">
-                        <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
-                            <div class="text-4xl font-bold counter" data-target="30">11</div>
-                            <div class="text-lg">Anos no mercado</div>
-                        </div>
-                        <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
-                            <div class="text-4xl font-bold counter" data-target="60000">3000</div>
-                            <div class="text-lg">Entregas por dia</div>
-                        </div>
-                        <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
-                            <div class="text-4xl font-bold counter" data-target="60">80</div>
-                            <div class="text-lg">Máquinas disponíveis</div>
-                        </div>
-                        <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
-                            <div class="text-4xl font-bold counter" data-target="500">200</div>
-                            <div class="text-lg">Colaboradores</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="ClienteSection" class="py-16 px-4 bg-gray-100">
-            <h1 class="text-2xl font-bold text-black-900 mb-4">Quem Confia na VALION</h1>
-            <div class="ContainerClientes">
-                <div class="cardCliente">
-                    <img src="./assets/clientes/igreja.webp" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/entec.WEBP" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/piramidal.WEBP" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/Lineal.WEBP" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/CYRELLA.WEBP" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/meca.webp" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/infomov.webp" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/brz.webp" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/HELBO.webp" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/faae.webp" alt="logoClietne" />
-                </div>                
-                <div class="cardCliente">
-                    <img src="./assets/clientes/econ.webp" alt="logoClietne" />
-                </div>
-                <div class="cardCliente">
-                    <img src="./assets/clientes/vita.webp" alt="logoClietne" />
-                </div>
-                
-
-            </div>
-        </section>
-        
-        <!-- Road Transport Section -->
-        <section id="Transportes" class="py-16 px-4 bg-gray-100">
-            <div class="container mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-black-900 mb-2">Transportes Rodoviários</h2>
-                    <p class="text-xl text-gray-600">Frota moderna e diversificada para atender todas as suas necessidades</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/fh540.webp" alt="Caminhão Toco" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Volvo FH 540</h3>
-                            <p class="text-white mb-4">O líder, equipado com direção dinâmica Volvo, faróis anti-ofuscamento e excelente desempenho em longas distâncias</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/scania.webp" alt="Caminhão 3/4" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Scania 770 S V8</h3>
-                            <p class="text-white mb-4">Motor V8 de alto desempenho, caixa automatizada de 14 marchas, ideal para cargas extrapesadas e longas distâncias.</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/actron.webp" alt="Caminhão Truck" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Mercedes-Benz Actros 2651</h3>
-                            <p class="text-white mb-4">Tecnologias avançadas como MirrorCam, assistente de frenagem ativo (ABA 5), piloto automático preditivo e cabine com painel digital.
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/daf.webp" alt="Carreta LS" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">DAF XF 105</h3>
-                            <p class="text-white mb-4">Cabine espaçosa, motor PACCAR MX-13 eficiente, sistemas de segurança como controle de estabilidade (VSC) e alerta de saída de faixa (LDWS).</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/eveco.webp" alt="Carreta Bitrem" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Iveco Hi-Way 560</h3>
-                            <p class="text-white mb-4">Motor FPT Cursor 13, cabine confortável com recursos como controle elétrico dos retrovisores e spray desembaçador, ideal para operações de longa distância.</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/costelation.webp" alt="Caminhão Tanque" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Volkswagen Constellation 25.480</h3>
-                            <p class="text-white mb-4">Motor MAN D26, transmissão automatizada de 12 marchas com predictive shifting, assistente de partida em rampa e controle de estabilidade.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Machine Rental Section -->
-        <section id="Locação" class="py-16 px-4 bg-white">
-            <div class="container mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-black-900 mb-2">Locação de Máquinas</h2>
-                    <p class="text-xl text-gray-600">Equipamentos modernos e operadores qualificados para sua obra</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/retro.webp" alt="Escavadeira Hidráulica" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">RETROESCAVADEIRA</h3>
-                            <p class="text-white mb-4">A retroescavadeira é o equipamento ideal para diferentes tipos de obras. Seja para escavação em espaços apertados ou grandes projetos de infraestrutura, nossa frota oferece máxima eficiência, potência e versatilidade.</p>
-                            
-                        </div>
-                    </div>
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/cp.webp" alt="Escavadeira Hidráulica" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">CAMINHÃO PRANCHA</h3>
-                            <p class="text-white mb-4">Perfeito para o transporte de máquinas pesadas e grandes volumes de carga entre canteiros de obra. O caminhão prancha é fundamental para a logística de construção, garantindo a movimentação segura e eficiente de equipamentos.</p>
-                            
-                        </div>
-                    </div>
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/cb.webp" alt="Escavadeira Hidráulica" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">CAMINHÃO BASCULANTE</h3>
-                            <p class="text-white mb-4">Ideal para o transporte de grandes quantidades de materiais como areia, pedra e terra. O caminhão basculante é uma peça chave em qualquer obra de terraplenagem, garantindo eficiência no transporte e descarga de materiais.</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/miniRetro.webp" alt="Trator de Esteira" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">MINI ESCAVADEIRA</h3>
-                            <p class="text-white mb-4">Temos mini escavadeiras de alta performance disponíveis para locação, ideais para áreas com espaço restrito. Oferecem eficiência na escavação, garantindo precisão, rapidez e menor impacto no ambiente.</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/carregadeira.webp" alt="Carregadeira" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">MINI CARREGADEIRA</h3>
-                            <p class="text-white mb-4">Disponibilizamos mini carregadeiras para locação, perfeitas para trabalhos em espaços apertados e com alta demanda de movimentação de materiais. Com potência e agilidade, elas garantem eficiência e rapidez, além de oferecerem versatilidade para diversos tipos de tarefas.</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/compactadora-CB24-640x480.jpg" alt="Rolo Compactador" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">MINI ROLO COMPACTADOR</h3>
-                            <p class="text-white mb-4">Essencial para projetos de pavimentação e compactação de pequenas superfícies, como calçadas residenciais, estacionamentos e acessos de difícil manobra. O mini rolo compactador liso oferece alta mobilidade e versatilidade, garantindo um acabamento uniforme e eficaz, ideal para assegurar a estabilidade e durabilidade do pavimento em espaços reduzidos.</p>
-                            
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/escavadeira.webp" alt="Caminhão Basculante" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">ESCAVADEIRA HIDRAULICA</h3>
-                            <p class="text-white mb-4">Indicada para escavações profundas e grandes movimentações de terra. A escavadeira hidráulica é conhecida por sua força e eficiência. Este equipamento é ideal para a preparação de terrenos, mineração e grandes projetos de infraestrutura.</p>
-                            
-                        </div>
-                    </div>
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/romp.webp" alt="Caminhão Basculante" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">ROMPEDOR</h3>
-                            <p class="text-white mb-4">Essencial para a demolição de concreto e asfalto, o rompedor é utilizado para quebrar materiais resistentes, facilitando a remoção e reciclagem no local de trabalho. Sua força e eficiência aceleram significativamente os processos de demolição.</p>
-                            
-                        </div>
-                    </div>
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                        <img src="assets/rolo-compactador-ideal.png" alt="Caminhão Basculante" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">ROLO COMPACTADOR</h3>
-                            <p class="text-white mb-4">Essencial para projetos de pavimentação e compactação de grandes superfícies planas, como estradas e fundações. O rolo compactador liso garante um acabamento uniforme e eficaz, crucial para a estabilidade e durabilidade do pavimento.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Differentiators Section -->
-        <section id="Diferenciais" class="py-16 px-4">
-            <div class="container mx-auto max-w-4xl">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-2">Nossos Diferenciais</h2>
-                    <p class="text-xl opacity-80">O que nos torna a melhor escolha para sua empresa</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-shield-alt text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white font-bold mb-2">Segurança em Primeiro Lugar</h3>
-                                <p class="opacity-80 text-white">Nossos motoristas e operadores passam por treinamentos constantes e nossos veículos e máquinas possuem manutenção preventiva rigorosa.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-clock text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white font-bold mb-2">Pontualidade Garantida</h3>
-                                <p class="opacity-80 text-white">Comprometimento com prazos é nossa marca registrada. Nossos índices de atraso são inferiores a 1%.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marked-alt text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white font-bold mb-2">Cobertura Nacional</h3>
-                                <p class="opacity-80 text-white">Atendemos todo o território nacional com frota própria e parceiros estratégicos em todas as regiões.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-headset text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white font-bold mb-2">Atendimento Personalizado</h3>
-                                <p class="opacity-80 text-white">Cada cliente tem um consultor dedicado para acompanhar suas operações e garantir total satisfação.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-leaf text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white font-bold mb-2">Sustentabilidade</h3>
-                                <p class="opacity-80 text-white">Frota moderna com baixa emissão de poluentes e programas de compensação ambiental.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-chart-line text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white font-bold mb-2">Tecnologia de Ponta</h3>
-                                <p class="opacity-80 text-white">Rastreamento via satélite, monitoramento em tempo real e sistemas de gestão logística integrados.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        -->
     </main>
 
     <!-- Footer -->
     <footer style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class=" text-white pt-12 pb-6 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
-                <div class="md:w-1/3">
-                    <h3 class="text-xl font-bold mb-4 text-white">Área do Cliente</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Orçamentos</a></li>
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Transportes Rodoviários</a></li>
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Locação de Máquinas</a></li>
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Área do Cliente</a></li>
-                    </ul>
-                </div>
-                
+
                 <div class="md:w-1/3">
                     <h3 class="text-xl font-bold mb-4 text-white">A VALION</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Quem Somos</a></li>
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Notícias</a></li>
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Contato</a></li>
-                        <li><a href="#" class="hover:text-yellow-500 transition duration-300">Trabalhe Conosco</a></li>
+                        <li><a href="#Historia" class="hover:text-yellow-500 transition duration-300">Quem Somos</a></li>
+                        <li><a href="#Notícia" class="hover:text-yellow-500 transition duration-300">Notícias</a></li>
+                        <li><a href="#Contato" class="hover:text-yellow-500 transition duration-300">Contato</a></li>
+                        <li><a href="#Trabalhe" class="hover:text-yellow-500 transition duration-300">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 text-white">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#Transportes" class="hover:text-yellow-500 transition duration-300">Transportes Rodoviários</a></li>
+                        <li><a href="#Locação" class="hover:text-yellow-500 transition duration-300">Locação de Máquinas</a></li>
                     </ul>
                 </div>
                 
@@ -974,7 +903,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i>
-                            <span>contato@chterra.com.br</span>
+                            <span>contatovalion.com.br</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i>
@@ -1002,7 +931,7 @@
                 
                 <div class="flex space-x-4">
                     <a href="https://api.whatsapp.com/send/?phone=5511981651780" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-whatsapp fa-lg"></i></a>
-                    <a href="https://www.instagram.com/ch.terra/" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.instagram.com/valion.oficial/" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
                     <a href="#" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
                 </div>
             </div>
