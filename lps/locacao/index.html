@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/teste.png" type="image/svg+xml">
+    <title>valion | LOCAÇÃO DE MÁQUINAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#cb4017',
+                        secondary: '#f28b0c',
+                        accent: '#f39b1f',
+                        dark: '#1a1a1a',
+                        light: '#f8f8f8'
+                    },
+                    fontFamily: {
+                        horizon: ['Horizon', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'text-glow': 'textGlow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        textGlow: {
+                            '0%': { 'text-shadow': '0 0 8px rgba(203, 64, 23, 0.5)' },
+                            '100%': { 'text-shadow': '0 0 16px rgba(242, 139, 12, 0.8)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @font-face {
+            font-family: 'Horizon';
+            src: url(fonts/Horizon-updated/t/horizon.otf) format('truetype');
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        .font-horizon {
+            font-family: 'Horizon-updated', sans-serif;
+        }
+        
+        body {
+            background-image: url('assets/bg.webp');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(180deg, #cb4017, #f28b0c);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #cb4017, #f28b0c );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: linear-gradient(180deg, #e05a2b, #f59e2d);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 12px;
+        }
+        
+        .hero-video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 90%;
+            max-width: 1200px;
+        }
+        
+        .hero-title {
+            text-align: start;
+            font-weight: 480;
+            letter-spacing: -2,5px;
+
+            /* font e tamanho agora via Tailwind (font-horizon + text-5xl etc) */
+        }
+        
+        .hero-subtitle {
+            font-family: "Montserrat";
+            margin-top: 20px;
+            text-align: start;
+            font-size: clamp(1.5rem, 1vw, 1rem);
+            line-height: 20px;
+            max-width: 800px;
+            font-weight: 700;
+            color: rgba(251, 146, 60)
+        }
+        #FF {
+            background-color: rgba(148, 142, 142, 0.123);
+            width: 40%;
+            margin-left: 30%;
+            border-radius: 5px;
+        }
+        #f {
+            width: 90%;
+            margin-left: 5%;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                top: 40%;
+                width: 90%;
+            }
+            
+            .hero-video {
+                height: 70vh;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            .hero-title {
+            line-height: 40px;
+            }
+            #produtividade{
+                font-size: 20px;
+            }
+            #nossosB{
+                text-align: center;
+                font-size: 28px;
+            }
+            #nossosE{
+                text-align: center;
+                font-size: 28px;
+            }
+            #perguntasF{
+                text-align: center;
+                font-size: 28px;
+            }
+            #FF {
+                width: 90%;
+                margin-left: 5%;
+                border-radius: 5px;
+            }
+        }
+    #IMGLOGOFOOTER {
+      margin-left: 40%;
+      width: 20%;
+    }
+       
+    </style>
+</head>
+<body class="text-white">
+    <!-- Hero Section -->
+    <section class="relative h-screen overflow-hidden">
+        <video class="hero-video w-full h-full object-cover" loop autoplay muted playsinline>
+            <source src="assets/teste.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-content">
+            <div class="" style="width:  100%;">
+                <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl text-white mb-4 animate-fade-in ">
+                    <span class="gradient-text">SUA OBRA</span> <br/>COMEÇA COM<br/> A <span>MÁQUINA CERTA!</span>
+                </h1>
+                
+                <p class="hero-subtitle font-montserrat mb-8 animate-slide-up" style="animation-delay: 0.2s;">
+                    A VALION é especializada em locação de Máquinas.
+                </p>
+                
+                <button style="width: 100%;" onclick="BTN()"
+                        class="gradient-bg px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 btn-hover animate-slide-up"
+                        style="animation-delay: 0.4s;">
+                         FALE COM UM DE NOSSOS ESPECIALISTAS
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gradient Strip -->
+    <div class="gradient-bg h-2 w-full"></div>
+    
+    <!-- Second Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 animate-slide-up">
+                    <h1 id="produtividade" class="text-3xl md:text-4xl lg:text-5xl font-horizon mb-6">
+                        Produtividade sem limites: <br>
+                        <span class="gradient-text">locação de máquinas</span> para quem não pode parar
+                    </h1>
+                    
+                    <p class="text-lg mb-8 font-montserrat">
+                        Oferecemos máquinas de alto desempenho para obras de infraestrutura, 
+                        movimentação de terra e projetos industriais. Aqui, você não perde 
+                        tempo com burocracia ou manutenção — só trabalha com produtividade.
+                    </p>
+                    
+                    <button onclick="BTN()"
+                            class="gradient-bg px-6 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 btn-hover">
+                        FALE COM UM ESPECIALISTA
+                    </button>
+                </div>
+                
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="video-container">
+                        <video class="w-full h-full object-cover" loop autoplay muted playsinline>
+                            <source src="assets/001.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-container">
+                        <video class="w-full h-full object-cover" loop autoplay muted playsinline>
+                            <source src="assets/002.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-container">
+                        <video class="w-full h-full object-cover" loop autoplay muted playsinline>
+                            <source src="assets/003.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-container">
+                        <video class="w-full h-full object-cover" loop autoplay muted playsinline>
+                            <source src="assets/006.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+        <div class="max-w-7xl mx-auto">
+            <h1 id="nossosB" class="text-4xl md:text-5xl lg:text-6xl font-horizon text-center mb-16 animate-fade-in">
+                Nossos <span class="gradient-text">benefícios</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-slide-up">
+                <!-- Benefit Card 1 -->
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class="bg-white rounded-lg overflow-hidden mb-4">
+                        <img src="assets/equipamento.webp" alt="Equipamentos revisados" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-montserrat">
+                         Equipamentos revisados
+                    </h3>
+                    <p class="font-montserrat">
+                        Máquinas sempre inspecionadas e disponíveis para operação no momento da entrega, garantindo eficiência desde o primeiro dia.
+                    </p>
+                </div>
+                
+                <!-- Benefit Card 2 -->
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class="bg-white rounded-lg overflow-hidden mb-4">
+                        <img src="assets/locacao.webp" alt="Logística rápida" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-montserrat">
+                        Logística rápida
+                    </h3>
+                    <p class="font-montserrat">
+                        Atendimento ágil com entregas programadas e monitoradas para você não perder tempo em sua obra.
+                    </p>
+                </div>
+                
+                <!-- Benefit Card 3 -->
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class="bg-white rounded-lg overflow-hidden mb-4">
+                        <img src="assets/equipeT.webp" alt="Variedade de equipamentos" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-montserrat">
+                        Grande Variedade
+                    </h3>
+                    <p class="font-montserrat">
+                        Contamos com uma ampla frota de máquinas prontas para atender às necessidades do seu projeto.
+                    </p>
+                </div>
+                
+                <!-- Benefit Card 4 -->
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class="bg-white rounded-lg overflow-hidden mb-4">
+                        <img src="assets/contrato.webp" alt="Flexibilidade de prazos" class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-montserrat">
+                        Flexibilidade
+                    </h3>
+                    <p class="font-montserrat">
+                        Soluções sob medida para a sua necessidade, com opções de locação adaptadas ao seu ritmo e orçamento.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16 animate-slide-up" style="animation-delay: 0.2s;">
+                <button onclick="BTN()"
+                    class="gradient-bg px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 btn-hover">
+                    SOLICITAR UM ORÇAMENTO PERSONALIZADO
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+        <div class="max-w-7xl mx-auto text-center animate-fade-in">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-horizon mb-8">
+                Focados em entregar mais que <span class="gradient-text">MÁQUINAS</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl max-w-4xl mx-auto mb-12 font-montserrat">
+                Oferecemos estrutura para transformar sua obra em um centro de produtividade.
+                Apoiamos o seu projeto com máquinas de alta performance e um 
+                planejamento inteligente de locação para garantir resultados extraordinários em cada etapa.
+            </p>
+            
+            <button onclick="BTN()"
+                class="gradient-bg px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 btn-hover">
+                CONHEÇA NOSSAS SOLUÇÕES
+            </button>
+        </div>
+    </section>
+    
+    <!-- Machines Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+        <div class="max-w-7xl mx-auto">
+            <h1 style="text-align: center;" id="nossosE" class="text-4xl md:text-5xl lg:text-6xl font-horizon mb-8">
+                Nossos <span class="gradient-text">equipamentos</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animate-slide-up">
+                <!-- Machine Card 1 -->
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/retro.webp" alt="Retroescavadeira" class="h-48 object-contain" >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                       RETROESCAVADEIRA
+                    </h3>
+                    <p class="font-montserrat">
+                        A retroescavadeira é o equipamento ideal para diferentes tipos de obras. Seja para escavação em espaços apertados ou grandes projetos de infraestrutura, nossa frota oferece máxima eficiência, potência e versatilidade.
+                    </p>
+                </div>
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/cp.webp"  alt="Carregadeira" class="h-48 object-contain" style="border-radius: 10px;" >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                         CAMINHÃO PRANCHA
+                    </h3>
+                    <p class="font-montserrat">
+                       Perfeito para o transporte de máquinas pesadas e grandes volumes de carga entre canteiros de obra. O caminhão prancha é fundamental para a logística de construção, garantindo a movimentação segura e eficiente de equipamentos.
+                    </p>
+                </div>
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/cb.webp" alt="Carregadeira" class="h-48 object-contain" style="border-radius: 10px;" >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                        CAMINHÃO BASCULANTE
+
+                    </h3>
+                    <p class="font-montserrat">
+                       Ideal para o transporte de grandes quantidades de materiais como areia, pedra e terra.
+                        O caminhão basculante é uma peça chave em qualquer obra de terraplenagem, garantindo eficiência no transporte e descarga de materiais.
+                    </p>
+                </div>
+
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/miniRetro.webp" alt="Mini Retroescavadeira" class="h-48 object-contain" style="border-radius: 10px;" >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                         MINI ESCAVADEIRA
+                    </h3>
+                    <p class="font-montserrat">
+                        Temos mini escavadeiras de alta performance 
+                        disponíveis para locação, ideais para áreas 
+                        com espaço restrito. Oferecem eficiência na escavação, 
+                        garantindo precisão, rapidez e menor impacto no ambiente.
+                    </p>
+                </div>
+                
+                <!-- Machine Card 3 -->
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/carregadeira.webp" alt="Carregadeira" class="h-48 object-contain" style="border-radius: 10px;" >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                        MINI CARREGADEIRA
+                    </h3>
+                    <p class="font-montserrat">
+                        Disponibilizamos mini carregadeiras para locação, perfeitas para trabalhos em espaços apertados e com alta demanda de movimentação de materiais. Com potência e agilidade, elas garantem eficiência e rapidez, além de oferecerem versatilidade para diversos tipos de tarefas.
+                    </p>
+                </div>
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/compactadora-CB24-640x480.jpg" alt="Carregadeira" class="h-48 object-contain" style="border-radius: 10px;" >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                        MINI ROLO COMPACTADOR
+                    </h3>
+                    <p class="font-montserrat">
+                        Essencial para projetos de pavimentação e compactação de pequenas superfícies, como 
+                        calçadas residenciais, estacionamentos e acessos de difícil manobra. O mini rolo 
+                        compactador liso oferece alta mobilidade e versatilidade, garantindo um acabamento uniforme e eficaz,
+                        ideal para assegurar a estabilidade e durabilidade do pavimento em espaços reduzidos.
+                    </p>
+                </div>
+
+
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/escavadeira.webp" alt="Retroescavadeira" class="h-48 object-contain"  >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                       ESCAVADEIRA HIDRAULICA
+                    </h3>
+                    <p class="font-montserrat">
+                        Indicada para escavações profundas e grandes movimentações de terra. 
+                        A escavadeira hidráulica é conhecida por sua força e eficiência.
+                        Este equipamento é ideal para a preparação de terrenos, mineração 
+                        e grandes projetos de infraestrutura.
+                    </p>
+                </div>
+
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/romp.webp" alt="Carregadeira" class="h-48 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                        ROMPEDOR
+                    </h3>
+                    <p class="font-montserrat">
+                       Essencial para a demolição de concreto e asfalto, o rompedor é utilizado para quebrar materiais resistentes, facilitando a remoção e reciclagem no local de trabalho.
+                       Sua força e eficiência aceleram significativamente os processos de demolição.
+                    </p>
+                </div>
+                
+                <!-- ROLO COMPACTADOR -->
+
+                <div class="gradient-bg rounded-xl p-6 shadow-xl card-hover">
+                    <div class=" rounded-lg p-4 mb-4 flex justify-center">
+                        <img src="./assets/rolo-compactador-ideal.png" alt="Mini Retroescavadeira" class="h-48 object-contain" style="border-radius: 10px;" >
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center font-montserrat">
+                         ROLO COMPACTADOR
+                    </h3>
+                    <p class="font-montserrat">
+                        Essencial para projetos de pavimentação 
+                        e compactação de grandes superfícies planas,
+                        como estradas e fundações.
+                        O rolo compactador liso garante um acabamento 
+                        uniforme e eficaz, crucial para a estabilidade e durabilidade do pavimento.
+                    </p>
+                </div>
+
+                
+            </div>
+            
+            <div class="text-center mt-16 animate-slide-up" style="animation-delay: 0.2s;">
+                <button onclick="BTN()"
+                        class="gradient-bg px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 btn-hover">
+                    LOCAR EQUIPAMENTO
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+        <div class="max-w-7xl mx-auto">
+            <h1 style="text-align: center;" id="perguntasF" class="text-4xl md:text-5xl lg:text-6xl font-horizon mb-8">
+                Perguntas <span class="gradient-text">frequentes</span>
+            </h1>
+            
+            <div class="max-w-4xl mx-auto space-y-4 animate-slide-up">
+                <!-- FAQ Item 1 -->
+                <div onclick="Pergunta('p01')" class="gradient-bg rounded-xl p-6 cursor-pointer faq-item" id="p01">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold font-montserrat">
+                            Como funciona o processo de locação das máquinas?
+                        </h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </div>
+                    <div class="resposta mt-4 hidden" id="r01">
+                        <p class="font-montserrat">
+                            Após o seu contato, nossa equipe realiza um breve levantamento da sua necessidade, indica os equipamentos ideais e envia uma proposta personalizada. Com a aprovação, agendamos a entrega no local da obra no prazo combinado.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div onclick="Pergunta('p02')" class="gradient-bg rounded-xl p-6 cursor-pointer faq-item" id="p02">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold font-montserrat">
+                            As máquinas passam por manutenção antes da entrega?
+                        </h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </div>
+                    <div class="resposta mt-4 hidden" id="r02">
+                        <p class="font-montserrat">
+                            Sim. Todas as máquinas são revisadas e testadas antes de cada locação, garantindo segurança e performance desde o primeiro uso.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div onclick="Pergunta('p03')" class="gradient-bg rounded-xl p-6 cursor-pointer faq-item" id="p03">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold font-montserrat">
+                            O equipamento alugado possui cobertura de seguro?
+                        </h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </div>
+                    <div class="resposta mt-4 hidden" id="r03">
+                        <p class="font-montserrat">
+                            Sim, todos os equipamentos alugados pela VALION possuem cobertura de seguro, protegendo sua obra contra imprevistos e garantindo maior segurança durante o uso das máquinas.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div onclick="Pergunta('p04')" class="gradient-bg rounded-xl p-6 cursor-pointer faq-item" id="p04">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold font-montserrat">
+                            É possível ajustar prazos ou renovar o contrato de locação?
+                        </h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </div>
+                    <div class="resposta mt-4 hidden" id="r04">
+                        <p class="font-montserrat">
+                            Sim. Trabalhamos com flexibilidade nos prazos e oferecemos opções de renovação conforme a evolução do seu projeto. Basta entrar em contato com nosso atendimento para ajustar as condições.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form -->
+    <section id="Formulario" class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+        <div id="ContentForm" class="max-w-7xl mx-auto">
+            <div id="TTT" class="text-center mb-16 animate-fade-in">
+                <img src="assets/logoBig.webp" alt="Logo CH Terra" class="mx-auto w-48 mb-6">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-horizon mb-4">
+                transformE seu projeto em realidade!
+                </h1>
+                <p style="font-size: 19px;" class="text-lg max-w-3xl mx-auto font-montserrat">
+                    Preencha o formulário e conte com equipamentos de alta performance, entrega rápida e suporte especializado para avançar com segurança e eficiência.
+                </p>
+            </div>
+            
+            <div id="FF">
+                <form id="f" class="space-y-6">
+                    <div>
+                        <br/>
+                        <label for="nome" class="block font-montserrat font-medium mb-2">Nome Completo *</label>
+                        <input id="nome" type="text"
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 text-white placeholder-white placeholder-opacity-70">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block font-montserrat font-medium mb-2">E-mail *</label>
+                        <input id="email" type="email"
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 text-white placeholder-white placeholder-opacity-70">
+                    </div>
+                    
+                    <div>
+                        <label for="contato" class="block font-montserrat font-medium mb-2">Telefone *</label>
+                        <input id="contato" type="tel"
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 text-white placeholder-white placeholder-opacity-70">
+                    </div>
+                    
+                    <div>
+                        <label for="description" class="block font-montserrat font-medium mb-2">Descreva sua necessidade *</label>
+                        <textarea id="description" rows="4"
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 text-white placeholder-white placeholder-opacity-70"></textarea>
+                    </div>
+                    
+                    <button type="button" onclick="Orcamento()"
+                        class="w-full gradient-bg px-6 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 btn-hover">
+                        ENVIAR SOLICITAÇÃO
+                    </button><br/><br/>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-orange-700 to-yellow-600 text-white py-10 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Social Media -->
+        <div class="text-center md:text-left">
+            <h3 class="font-horizon text-xl mb-4">Redes Sociais</h3>
+            <div class="flex justify-center md:justify-start space-x-4">
+            <a href="https://www.instagram.com/valion.oficial/" target="_blank" class="text-white hover:text-black transition">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a href="https://wa.me/5511981651780" target="_blank" class="text-white hover:text-black transition">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/valion.oficial/" class="text-white hover:text-black transition">
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            </div>
+        </div>
+        
+        <!-- Address -->
+        <div class="text-center" id="A">
+            <img id="IMGLOGOFOOTER" src="assets/logobig.webp" alt="chtera logo" />
+            <br/>
+            <p class="text-sm">
+            VALION - Todos os direitos reservados
+            </p>
+        </div>
+        
+        <!-- Developer -->
+        <div class="text-center md:text-right">
+            <p class="mb-2">Desenvolvido por:</p>
+            <a href="https://www.instagram.com/cristatus.oficial/" target="_blank">
+            <img src="assets/Logo.webp" alt="Cristatus" class="h-12 inline-block">
+            </a>
+        </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scroll to form
+        function BTN(){
+            const formContainer = document.getElementById("Formulario");
+            formContainer.scrollIntoView({ behavior: "smooth" });
+        };
+        
+        // FAQ toggle function
+        function Pergunta(id){
+            const resposta = document.querySelector(`#r${id.slice(1)}`);
+            const icon = document.querySelector(`#${id} i`);
+            
+            // Toggle answer visibility
+            resposta.classList.toggle('hidden');
+            
+            // Toggle icon rotation
+            icon.classList.toggle('rotate-180');
+            
+            // Highlight active question
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if(item.id === id) {
+                    item.classList.toggle('bg-opacity-00');
+                } else {
+                    item.classList.remove('bg-opacity-00');
+                    item.querySelector('.resposta').classList.add('hidden');
+                    item.querySelector('i').classList.remove('rotate-180');
+                }
+            });
+        };
+        
+        // Form validation and WhatsApp redirect
+        function Orcamento(){
+            const nome = document.querySelector("#nome").value.trim();
+            const email = document.querySelector("#email").value.trim();
+            const contato = document.querySelector("#contato").value.trim();
+            const description = document.querySelector("#description").value.trim();
+            
+            // Validate fields
+            if(!nome || !email || !contato || !description) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            // Validate phone number (Brazilian format)
+            if(contato.length < 11 || contato.length > 11) {
+                alert('Por favor, insira um número de telefone válido com DDD (11 dígitos).');
+                return;
+            }
+            
+            // Validate email format
+            if(!email.includes('@') || !email.includes('.')) {
+                alert('Por favor, insira um endereço de e-mail válido.');
+                return;
+            }
+            
+            // Format WhatsApp message
+            const msg = `*Olá,* Vim através da sua página de vendas e gostaria de solicitar um orçamento. Seguem minhas informações:\n\n*Nome:* ${nome}\n*E-mail:* ${email}\n*Contato:* ${contato}\n\n*Descrição da necessidade:*\n${description}`;
+            
+            // Encode message for URL
+            const msgEncoded = encodeURIComponent(msg);
+            const linkWhatsApp = "https://api.whatsapp.com/send?phone=5511981651780&text=" + msgEncoded;
+            
+            // Open WhatsApp in new tab
+            window.open(linkWhatsApp, '_blank');
+        }
+        
+        // Add animation classes as elements come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in', 'animate-slide-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

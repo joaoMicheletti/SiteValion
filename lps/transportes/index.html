@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/teste.png" type="image/svg+xml">
+  <title>VALION | Transportes Rodoviários</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    #A {
+      text-align: center;
+    }
+    #IMGLOGOFOOTER {
+      margin-left: 40%;
+      width: 20%;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    
+    @font-face {
+      font-family: 'Horizon';
+      src: url(fonts/Horizon-updated/t/horizon.otf) format('truetype');
+    }
+    
+    :root {
+      --primary: #f28b0c;
+      --secondary: #cb4017;
+      --dark: #1a1a1a7a;
+      --light: #f8f8f8;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      background-image: url('./assets/bg.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+    
+    
+    .font-horizon {
+      font-family: 'Horizon-updated', sans-serif;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(90deg, rgba(203, 64, 23, 0.2), rgba(242, 139, 12, 0.2));
+      border: 1px solid rgba(242, 139, 12, 0.3);
+    }
+    
+    .btn-gradient {
+      background: linear-gradient(180deg, #cb4017, #f28b0c);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(242, 139, 12, 0.3);
+    }
+    
+    /* Hero Section */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    #hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      width: 90%;
+      max-width: 1200px;
+    }
+    
+    /* Modal Porta a Porta */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      background: var(--dark);
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      padding: 30px;
+      position: relative;
+      transform: translateY(50px);
+      transition: all 0.3s ease;
+    }
+    
+    .modal-overlay.active .modal-content {
+      transform: translateY(0);
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--primary);
+    }
+    
+    /* Cards */
+    .service-card {
+      
+      background: linear-gradient(180deg, #cb4017, #f28b0c);
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(242, 139, 12, 0.2);
+    }
+    
+    .card-image {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    /* FAQ */
+    .faq-item {
+      transition: all 0.3s ease;
+      background: linear-gradient(180deg, #cb4017, #f28b0c);
+    }
+    
+    
+    .faq-item .icon {
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.active .icon {
+      transform: rotate(180deg);
+    }
+    
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-content {
+      max-height: 500px;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+      border-radius: 10px;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .testimonial-image {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    .animate-slide-up {
+      animation: slideUp 0.8s ease forwards;
+    }
+    
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+    
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+    
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+    /* ajuste o css do formulário*/
+    #form{
+      margin-top: -110px;
+    
+    }
+    #dvForm {
+      width: 50%;
+      margin-left: 25%;
+    }
+    #containerForm {
+      width: 80%;
+      margin-left: 10%;
+      padding: 25px;
+      background-color: rgba(148, 142, 142, 0.123);
+      backdrop-filter: blur(4px);
+      border-radius: 15px;
+    }
+    #containerForm label {
+      color: white;
+      font-size: 19px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    #containerForm input {
+      background-color:  rgba(179, 169, 169, 0.219);
+      height: 55px;
+      margin-bottom: 20px;
+    }
+    #containerForm textarea {
+      background-color:  rgba(146, 139, 139, 0.39);
+      height: 55px;
+      margin-bottom: 20px;
+      height: 130px;
+    }
+    #TRANSFORME {
+      font-family: "Horizon";
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 0 5%;
+      }
+      
+      .hero-title {
+        font-size: 2rem !important;
+        line-height: 2.2rem !important;
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem !important;
+      }
+      
+      .testimonial-image {
+        height: 180px;
+      }
+      #LogoBig {
+        width: 45%;
+      }
+      #sRoteiro {
+        padding: 0;
+      }
+      #dSR{
+        width: 100%;
+      }
+      #roteiro {
+        width: 100%
+      }
+      #dvForm {
+        margin-top: -30px;
+        width: 100%;
+        margin-left: 0%;
+      }
+      #containerForm {
+        width: 90%;
+        margin-left: 5%;
+      }
+    }
+    /* Base */
+.selector{
+  display:flex;
+  gap: 16px;            /* ajuda no desktop quando não usa sobreposição */
+  justify-content:center;
+  align-items:stretch;
+  width:100%;
+  margin-bottom:40px;
+  text-align:start;
+  overflow:visible;
+}
+
+/* Cards fluidos */
+.selector .card{
+  display:flex;
+  flex-direction:column;
+  height: clamp(280px, 45vw, 350px);
+  width: clamp(220px, 28vw, 300px);
+  border-radius:10px;
+  box-shadow:-1rem 0 1rem rgba(8,8,8,.4);
+  transition: transform .4s ease-out;
+  position:relative;
+  left:0;
+}
+
+/* efeito “stack” (sobreposição) só no desktop */
+.selector .card:not(:first-child){
+  margin-left:-50px;
+}
+
+/* Hover apenas em dispositivos com mouse */
+@media (hover: hover) and (pointer: fine){
+  .selector .card:hover{
+    transform: translateY(-20px);
+  }
+  .selector .card:hover ~ .card{
+    position:relative;
+    left:50px;
+  }
+}
+
+/* Conteúdos internos */
+.selector .title{
+  position:absolute;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight:600;
+  left:10px; top:20px;
+  color:#fff;
+  font-family:Arial, sans-serif;
+}
+
+.IMGCARD{
+  margin-top:100px;
+  height:150px;
+  width:90%;
+  margin-left:5%;
+  border-radius:10px;
+  margin-bottom:30px;
+  object-fit:cover;             /* garante corte bonito */
+  aspect-ratio: 16 / 9;         /* ajuda na responsividade */
+}
+
+.seta{
+  width:min(40%, 260px);
+  margin: 0 auto 30px;          /* centraliza e controla margem */
+  display:block;
+}
+
+/* ====== BREAKPOINTS ====== */
+
+/* <= 1100px: diminui sobreposição para não quebrar */
+@media (max-width: 1100px){
+  .selector .card:not(:first-child){
+    margin-left:-30px;
+  }
+}
+
+/* <= 900px: troca para grid de 2 colunas, remove sobreposição */
+@media (max-width: 900px){
+  .selector{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .selector .card{
+    width: 100%;
+    height: clamp(260px, 50vw, 320px);
+  }
+  .selector .card:not(:first-child){
+    margin-left:0;        /* sem sobreposição no mobile/tablet */
+  }
+}
+
+/* <= 600px: 1 coluna empilhada */
+@media (max-width: 600px){
+  .selector{
+    grid-template-columns: 1fr;
+    margin-bottom: 100px;
+  }
+  .selector .card{
+    width:100%;
+    height: clamp(240px, 55vw, 300px);
+  }
+  .IMGCARD{
+    margin-top: 72px;
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  .seta{
+    display: none;
+  }
+}
+
+/* Acessibilidade: reduz movimento se preferido pelo usuário */
+@media (prefers-reduced-motion: reduce){
+  .selector .card{
+    transition: none;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section id="hero">
+    <video loop autoplay muted playsinline preload="none" src="assets/definitivo.mp4"></video>
+    <div class="hero-content">
+      <h1 class="hero-title font-horizon text-5xl md:text-6xl lg:text-7xl text-white mb-4 animate-fade-in">
+        <span class="gradient-text">TRANSPORTE</span><br>
+        <span class="text-white">RÁPIDO, SEGURO</span><br>
+        <span class="text-white">E HUMANIZADO.</span>
+      </h1>
+      <p class="hero-subtitle text-xl md:text-2xl text-orange-400 font-semibold mb-8 animate-fade-in delay-100">
+        A VALION é especializada em transporte rodoviário porta a porta.
+      </p>
+      <button class="btn-gradient font-bold text-white font-horizon px-8 py-3 rounded-lg text-lg w-full md:w-100 animate-fade-in delay-200">
+        <a href="#form">SOLICITAR ORÇAMENTO</a>
+      </button>
+    </div>
+  </section>
+  
+  <!-- Divider -->
+  <div class="h-4 w-full bg-gradient-to-r from-orange-700 to-yellow-600"></div>
+  
+  <!-- About Section -->
+  <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
+      <div class="w-full lg:w-1/2 mb-10 lg:mb-0 animate-slide-up">
+        <img src="assets/slogan.webp" alt="Texto decorativo" class="rounded-lg shadow-xl w-full">
+      </div>
+      <div class="w-full lg:w-1/2 lg:pl-16 animate-slide-up delay-100">
+        <p class="text-lg md:text-xl text-white mb-8">
+          Oferecemos alinhamento <span class="text-orange-400 font-semibold">estratégico</span> de prazos, rotas e 
+          condições, com coleta e entrega <span class="text-orange-400 font-semibold">porta a porta</span>, garantindo 
+          agilidade e praticidade para o seu negócio. Nosso 
+          atendimento é próximo e humanizado, acompanhando 
+          você em todas as etapas.<br><br>
+          Tudo isso com um <span class="text-orange-400 font-semibold">planejamento</span> eficiente e <span class="text-orange-400 font-semibold">monitoramento 
+          em tempo real</span>, do início ao fim da jornada da sua carga. 
+          O <span class="text-orange-400 font-semibold">resultado?</span> Mais tranquilidade e mais tempo <span class="text-orange-400 font-semibold">livre</span> para você 
+          focar no que realmente <span class="text-orange-400 font-semibold">importa</span>.
+        </p>
+        <button class="btn-gradient text-white font-bold font-horizon px-8 py-3 rounded-lg text-lg w-full md:w-auto mt-6">
+          <a href="#form">SOLICITAR ORÇAMENTO</a>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row">
+      <!-- Modal Porta a Porta -->
+      <div class="w-full lg:w-1/2 mb-16 lg:mb-0 lg:pr-8 animate-slide-up">
+        <div class="service-card cursor-pointer" onclick="openModal()">
+          <img src="./assets/ttttttttttt.webp" 
+               alt="Modal Porta a Porta" 
+               class="card-image rounded-t-lg">
+          <div class="gradient-bg p-6 rounded-b-lg">
+            <h3 class="font-horizon text-3xl text-white mb-4 font-bold">MODAL PORTA A PORTA</h3>
+            <p class="text-white">
+              Com o modal porta a porta, a entrega é direta e sem complicações. 
+              Coletamos sua carga na origem e a levamos até o destino final sem 
+              intermediários, garantindo mais agilidade, segurança e controle sobre 
+              cada etapa dotransporte. Uma solução sob medida para quem busca 
+              eficiência e tranquilidade em cada envio.
+            </p>
+            <button class="text-white font-semibold mt-4 flex items-center">
+              SAIBA MAIS <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Services Cards -->
+      <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6 animate-slide-up delay-100">
+        <!-- Card 1 -->
+        <div class="service-card">
+          <img src="./assets/seguro.webp" 
+               alt="Seguro completo" 
+               class="card-image rounded-t-lg">
+          <div class="gradient-bg p-4 rounded-b-lg">
+            <h4 class="font-horizon text-xl text-white font-bold mb-2">SEGURO COMPLETO</h4>
+            <p class="text-white  text-sm">
+              Cobertura contra roubo, furto e responsabilidade civil, sobre o valor total das mercadorias transportadas.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="service-card">
+          <img src="./assets/monitoramento.webp" 
+               alt="Monitoramento em tempo real" 
+               class="card-image rounded-t-lg">
+          <div class="gradient-bg p-4 rounded-b-lg">
+            <h4 class="font-horizon text-xl text-white font-bold mb-2">MONITORAMENTO EM TEMPO REAL </h4>
+            <p class="text-white text-sm">
+              Acompanhamento completo do trajeto com foco em diminuição de riscos.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="service-card">
+          <img src="./assets/gerenciamento.webp" 
+               alt="Gerenciamento completo" 
+               class="card-image rounded-t-lg">
+          <div class="gradient-bg p-4 rounded-b-lg">
+            <h4 class="font-horizon text-xl text-white mb-2 font-bold">GERENCIAMENTO COMPLETO</h4>
+            <p class="text-white text-sm">
+              Desde o planejamento de embarques, roteirização estratégica, até o pós-venda.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="service-card">
+          <img src="./assets/equipes.webp" 
+               alt="Equipe especializada" 
+               class="card-image rounded-t-lg">
+          <div class="gradient-bg p-4 rounded-b-lg">
+            <h4 class="font-horizon text-xl text-white mb-2 font-bold ">EQUIPE ESPECIALIZADA</h4>
+            <p class="text-white text-sm">
+              Profissionais experientes e capacitados para atendimento full-time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Service Section -->
+  <section id="sRoteiro" class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0 text-center">
+    <div id="dSR" class="max-w-7xl mx-auto">
+      <h2 class="font-horizon text-3xl md:text-4xl text-white mb-16 animate-fade-in font-bold">SOBRE O NOSSO SERVIÇO</h2>
+      
+      <div class="selector">
+        <div class="card bg-gradient-to-r from-orange-700 to-yellow-600">
+          <h3 class="title">Panejamento e Roterização</h3>
+          <img class="IMGCARD" src="assets/roterizacao.webp" alt="roteiro"/>
+          <img class="seta" src="assets/seta.webp" alt="Seta"/>
+        </div>
+
+        <div class="card bg-gradient-to-r from-orange-700 to-yellow-600">
+          <h3 class="title">Coleta na Origem</h3>
+          <img class="IMGCARD" src="assets/origem.webp" alt="roteiro"/>
+          <img class="seta" src="assets/seta.webp" alt="Seta"/>
+        </div>
+
+        <div class="card bg-gradient-to-r from-orange-700 to-yellow-600">
+          <h3 class="title">Inspeção de Carga e Equipamentos</h3>
+          <img class="IMGCARD" src="assets/inspection.webp" alt="roteiro"/>
+          <img class="seta" src="assets/seta.webp" alt="Seta"/>
+        </div>
+
+        <div class="card bg-gradient-to-r from-orange-700 to-yellow-600">
+          <h3 class="title">Logistica e Acompanhamento</h3>
+          <img class="IMGCARD" src="assets/acompanhamneto.webp" alt="roteiro"/>
+          <img class="seta" src="assets/seta.webp" alt="Seta"/>
+        </div>
+
+        <div class="card bg-gradient-to-r from-orange-700 to-yellow-600">
+          <h3 class="title">Entrega no Destino</h3>
+          <img class="IMGCARD" src="assets/destino.webp" alt="roteiro"/>
+          <img class="seta" src="assets/seta.webp" alt="Seta"/>
+        </div>
+
+        <div class="card bg-gradient-to-r from-orange-700 to-yellow-600">
+          <h3 class="title">Pós-venda e Suporte</h3>
+          <img class="IMGCARD" src="assets/pos.webp" alt="roteiro"/>
+          <img class="seta" src="assets/seta.webp" alt="Seta"/>
+        </div>
+      </div>
+
+      <p class="text-lg md:text-xl text-white max-w-4xl mx-auto mb-8 animate-slide-up delay-100">
+        Desde a <span class="text-orange-400 font-semibold">retirada</span> até a entrega final, 
+        a VALION <span class="text-orange-400 font-semibold">garante agilidade,</span> rastreabilidade, 
+        <span class="text-orange-400 font-semibold">seguro</span> e atendimento humanizado. Com anos de 
+        <span class="text-orange-400 font-semibold">experiência</span> no setor, somos <span class="text-orange-400 font-semibold">especialistas</span> em 
+        otimização de tempo.
+      </p>
+      <button class="btn-gradient font-bold text-white font-horizon px-8 py-3 rounded-lg text-lg mx-auto animate-slide-up delay-200">
+        <a href="#form">SOLICITAR ORÇAMENTO</a>
+      </button>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl font-horizon text-center mb-16 animate-fade-in">
+        PERGUNTAS <span class="gradient-text">FREQUENTES</span>
+      </h1>
+      
+      <div class="max-w-4xl mx-auto space-y-4 animate-slide-up">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item gradient-bg rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(this)">
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg md:text-xl font-bold">
+              O que é o serviço de transporte porta a porta?
+            </h3>
+            <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-content mt-4">
+            <p class="text-white">
+              Nosso serviço porta a porta garante que a carga seja retirada no local de origem e entregue diretamente ao destino final, sem a necessidade de intermediários ou trocas de veículo. Isso reduz riscos, evita avarias e agiliza o processo logístico.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="faq-item gradient-bg rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(this)">
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg md:text-xl font-bold">
+              Por que contratar um serviço com seguro incluso?
+            </h3>
+            <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-content mt-4">
+            <p class="text-white">
+              O seguro protege sua carga contra imprevistos como roubo, acidentes e danos. Com ele, você garante tranquilidade e respaldo em qualquer situação, além de demonstrar cuidado com o seu patrimônio.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="faq-item gradient-bg rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(this)">
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg md:text-xl font-bold">
+              Quais são os diferenciais da nossa transportadora?
+            </h3>
+            <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-content mt-4">
+            <p class="text-white">
+              Atuamos com foco em eficiência, pontualidade e relacionamento. Nosso atendimento é humanizado, a logística é personalizada para o seu negócio e contamos com um time preparado para atender desde pequenas cargas até grandes demandas com o mesmo padrão de excelência.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="faq-item gradient-bg rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(this)">
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg md:text-xl font-bold">
+              Qual o perfil ideal de cliente para o nosso serviço?
+            </h3>
+            <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-content mt-4">
+            <p class="text-white">
+              Empresas que valorizam entregas seguras, com prazos
+              cumpridos e rastreamento total. Atendemos desde 
+              indústrias a distribuidores e varejistas que 
+              buscam confiança, suporte e performance no transporte de seus produtos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+    <div class="max-w-7xl mx-auto">
+      <h2 style="text-align: center;" class=" md:text-5x1 text-4xl  font-bold text-white mb-6 animate-slide-up font-font-horizon">
+        A VOZ DE QUEM CONFIA NA NOSSA JORNADA
+      </h2>
+      
+      <div  class="grid grid-cols-1 md:grid-cols-3 gap-8 animate-slide-up">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card gradient-bg">
+          <img src="./assets/alberto.webp" 
+               alt="Cliente Piramidal" 
+               class="testimonial-image">
+          <div  class=" contentCArd  p-6">
+            <p class="text-white italic">
+              "Desde que comecei a utilizar os serviços da empresa, minhas
+               entregas passaram a ser muito mais ágeis e organizadas. O 
+               atendimento é impecável e o acompanhamento em tempo real traz 
+               uma segurança que eu nunca tive com outras transportadoras."
+            </p>
+            <p class="text-orange-400 font-semibold mt-4">- Alberto</p>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card gradient-bg">
+          <img src="./assets/roberta.webp" 
+               alt="Cliente Entec" 
+               class="testimonial-image">
+          <div class=" p-6">
+            <p class="text-white italic">
+              "Fiquei surpresa com a pontualidade e o zelo dedicado à carga com cuidado especial. 
+              Além disso, o suporte demonstrou sempre muita atenção e empenho em auxiliar. 
+              Sem dúvidas, essa empresa conquistou minha plena confiança como transportadora."
+            </p>
+            <p class="text-orange-400 font-semibold mt-4">- Roberta</p>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card gradient-bg">
+          <img src="./assets/thalia.webp" 
+               alt="Cliente Download" 
+               class="testimonial-image">
+          <div class=" p-6">
+            <p class="text-white italic">
+              "Com a entrega porta a porta o planejamento roteirizado sob medida, 
+              otimizamos nossas operações logísticas e mais reduzimos significativamente os custos. 
+              É uma parceria estratégica que oferece valor real e sustentabilidade ao nosso negócio."
+            </p>
+            <p class="text-orange-400 font-semibold mt-4">- Thalia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0 text-center">
+    <div class="max-w-4xl mx-auto">
+      <img src="assets/logobig.webp" alt="Logo CH Terra" id="LogoBig" class="mx-auto w-48 mb-6">
+      <h3 id="TRANSFORME" class=" lg:text-4xl text-white mb-6 ">
+        TRANSFORME SUA OPERAÇÃO COM SEGURANÇA E EFICIÊNCIA!
+      </h3>
+      <p  style="font-size: 19px;" class="text-lg max-w-3xl mx-auto font-montserrat">
+        Preencha o formulário e conte com um time comprometido, ágil e próximo em todas as etapas do transporte.
+      </p>
+      
+    </div>
+  </section>
+  
+  <!-- Form Section -->
+  <section id="form" class="py-20 px-4 md:px-8 lg:px-16 bg-black bg-opacity-0">
+    <div id="dvForm" >
+      <form id="containerForm">
+        <label>
+          Nome Completo *
+          <input type="text" id="nome"   required
+          class="w-full px-4 py-3 rounded-lg bg-gray-100 text-white border border-gray-700 focus:border-orange-500 focus:outline-none transition">
+        </label>        
+        
+        <label>
+          E-mail *
+          <input type="email" id="email"   required
+                   class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-orange-500 focus:outline-none transition">
+        </label>
+        
+        <label>
+          Telefone *
+          <input type="tel" id="contato"   required
+                   class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-orange-500 focus:outline-none transition">
+        </label>
+        
+        <label>
+          Descreva sua necessidade *
+          <textarea id="description" rows="1"   required
+                    class="w-full px-4 py-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-orange-500 focus:outline-none transition"></textarea>
+        
+        </label>
+        
+        
+        <button type="button" onclick="Orcamento()" 
+          id="Tt"
+                class="btn-gradient font-bold text-white font-horizon px-8 py-4 rounded-lg text-lg w-full md:w-100 mx-auto block">
+          FALE COM UM ESPECIALISTA
+        </button>
+      </form>
+    </div>
+  </section>
+  
+  <!-- Modal Porta a Porta -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">9
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h2 class="font-horizon text-3xl text-orange-400 mb-6">Modal Porta a Porta</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <img src="assets/ttttttttttt.webp" 
+               alt="Modal Porta a Porta" 
+               class="rounded-lg w-full h-auto">
+        </div>
+        <div>
+          <p class="text-white mb-4">
+            O serviço de transporte porta a porta da VALION foi desenvolvido para oferecer a máxima comodidade e segurança no transporte de suas mercadorias. Nossa equipe especializada cuida de todo o processo, desde a coleta no local de origem até a entrega no destino final.
+          </p>
+          <p class="text-white mb-4">
+            <strong class="text-orange-400">Principais benefícios:</strong>
+          </p>
+          <ul class="text-white list-disc pl-5 mb-6 space-y-2">
+            <li>Redução de avarias e extravios</li>
+            <li>Menos manuseio da carga</li>
+            <li>Rastreamento em tempo real</li>
+            <li>Atendimento personalizado</li>
+            <li>Seguro completo incluso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-orange-700 to-yellow-600 text-white py-10 px-4 md:px-8 lg:px-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Social Media -->
+      <div class="text-center md:text-left">
+        <h3 class="font-horizon text-xl mb-4">Redes Sociais</h3>
+        <div class="flex justify-center md:justify-start space-x-4">
+          <a href="https://www.instagram.com/valion.oficial/" target="_blank" class="text-white hover:text-black transition">
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+          <a href="https://wa.me/5511981651780" target="_blank" class="text-white hover:text-black transition">
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+          <a href="https://www.instagram.com/valion.oficial/" class="text-white hover:text-black transition">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Address -->
+      <div class="text-center" id="A">
+        <img id="IMGLOGOFOOTER" src="assets/logobig.webp" alt="chtera logo" />
+        <br/>
+        <p class="text-sm">
+          VALION - Todos os direitos reservados
+        </p>
+      </div>
+      
+      <!-- Developer -->
+      <div class="text-center md:text-right">
+        <p class="mb-2">Desenvolvido por:</p>
+        <a href="https://www.instagram.com/cristatus.oficial/" target="_blank">
+          <img src="assets/Logo.webp" alt="Cristatus" class="h-12 inline-block">
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Modal Functions
+    function openModal() {
+      document.getElementById('modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // FAQ Function
+    function toggleFAQ(element) {
+      element.classList.toggle('active');
+    }
+    
+    // Form Function
+    function Orcamento() {
+      
+      var nome = document.querySelector("#nome").value;
+      var email = document.querySelector("#email").value;
+      var contato = document.querySelector("#contato").value;
+      var description = document.querySelector("#description").value;
+      
+      if(nome === '' || email === '' || contato === '' || description === '') {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+      }
+      
+      if(contato.length < 11) {
+        alert('Por favor, insira um número de telefone válido com DDD.');
+        return;
+      }
+      
+      var msg = `*Olá,* Vim através da sua página e gostaria de solicitar um orçamento. Seguem minhas informações:\n\n*Nome:* ${nome}\n*E-mail:* ${email}\n*Contato:* ${contato}\n\n*Descrição da carga:* ${description}`;
+      
+      var msgEncoded = encodeURIComponent(msg);
+      var linkWhatsApp = "https://api.whatsapp.com/send?phone=5511981651780&text=" + msgEncoded;
+      
+      window.open(linkWhatsApp, '_blank');
+    }
+    
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animateElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>
