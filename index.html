@@ -8,6 +8,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        #divIconWhats {
+            cursor: pointer;
+            width: 50px;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            z-index: 6;
+        }
+        #iconWhtas{
+            cursor: pointer;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            width: 50px;           
+            z-index: 6;  /* entre o vídeo (-1) e o header (10) */
+        }
         /* Custom CSS for animations and effects not covered by Tailwind */
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -142,9 +158,9 @@
                 <ul id="Mobille" class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
                     <li class="lstaLink">
                         <a href="#Historia" class="block px-4 py-1 text-black-800 hover:bg-blue-100">A VALION</a>
-                        <a href="#Transportes" class="block px-4 py-1 text-black-800 hover:bg-blue-100">Transportes</a>
-                        <a href="#Locação" class="block px-4 py-1 text-black-800 hover:bg-blue-100">Locação</a>
-                        <a href="#Diferenciais" class="block px-4 py-1 text-black-800 hover:bg-blue-100">Diferenciais</a>
+                        <a href="#Transportes" class="block px-4 py-1 text-black-800 hover:bg-blue-100">TRANSPORTES</a>
+                        <a href="#Locação" class="block px-4 py-1 text-black-800 hover:bg-blue-100">LOCAÇÃO</a>
+                        <a href="#Diferenciais" class="block px-4 py-1 text-black-800 hover:bg-blue-100">DIFERENCIAIS</a>
                     </li>
                 </ul>
             </div>
@@ -205,7 +221,9 @@
                 <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="3"></button>
             </div>
         </section>
-        
+        <div id="divIconWhats">
+            <a target="_blank" href="https://wa.me/5511981651780"><img id="iconWhtas"  src="assets/whats.webp" alt="iconeWhats"/></a>
+        </div>
         <!-- Quick Links -->
         <section class="py-12 px-4">
             <div class="container mx-auto">
@@ -305,11 +323,17 @@
                     <div class="lg:w-1/1">
                         <br/>
                         <p class="text-black mb-4">
-                            A Valion nasceu de uma conexão verdadeira: dois jovens que se conheceram no colégio e, juntos, transformaram seus sonhos em propósito. Do namoro veio a união, da união o desejo de empreender.
+                            Com mais de 10 anos de expertise nos setores de transporte rodoviário e 
+                            locação de máquinas para terraplenagem, somos uma empresa sólida e inovadora, 
+                            comprometida com a excelência em cada etapa dos nossos serviços. Nossa atuação é 
+                            guiada por princípios de responsabilidade, ética e um constante foco em 
+                            soluções inteligentes e sustentáveis, que não apenas atendem às necessidades 
+                            do presente, mas também moldam um futuro promissor para nossos clientes e parceiros.
+                            Buscamos sempre superar expectativas, oferecendo qualidade, eficiência e segurança em ]
+                            todas as operações. Com um time altamente capacitado e uma infraestrutura moderna, 
+                            estamos prontos para transformar desafios em resultados duradouros, contribuindo para o 
+                            sucesso de cada projeto que assumimos.
 
-                            Movidos pela vontade de crescer e ajudar suas famílias, construíram uma empresa baseada em confiança, transparência e união. Mais do que oferecer serviços, criaram um legado: impactar vidas, gerar felicidade e levar soluções que transformam o setor.
-
-                            A Valion é o reflexo de um amor que virou negócio, de uma visão que virou realidade e de valores que permanecem inegociáveis.
                         </p>
                     </div>
                 </div>
@@ -321,9 +345,11 @@
                     <div class="lg:w-1/2 lg:order-1">
                         <h3 class="text-2xl font-bold text-black-900 mb-4">Nossa Missão</h3>
                         <p class="text-black">
-                            Nossa missão é inspirar pessoas a despertarem seu potencial de transformação, 
-                            construindo um mundo mais feliz, saudável e próspero. Com amor, fé e dedicação, 
-                            buscamos sempre o bem-estar de todos que confiam em nossa jornada.
+                            Nossa missão é oferecer soluções completas e inovadoras nos setores de transporte 
+                            rodoviário e locação de máquinas para terraplenagem, sempre com foco na excelência 
+                            e na satisfação dos nossos clientes. Comprometidos com a entrega de serviços de 
+                            alta qualidade, buscamos superar as expectativas de nossos parceiros, oferecendo 
+                            soluções que agregam valor, segurança e eficiência em todas as etapas do projeto.
                         </p>
                     </div>
                 </div>
@@ -335,10 +361,10 @@
                     <div class="lg:w-1/2 lg:order-2">
                         <h3 class="text-2xl font-bold text-black-900 mb-4">Nossa Visão</h3>
                         <p class="text-black">
-                            Ser referência em transformação, deixando um legado de impacto 
-                            positivo para as próximas gerações. Queremos despertar o potencial 
-                            das pessoas para viver com felicidade, equilíbrio e prosperidade, 
-                            construindo uma sociedade mais justa e saudável.
+                            Ser reconhecida como a líder em inovação e excelência nos setores em que atuamos, 
+                            transformando o mercado com soluções sustentáveis e de alto desempenho. Almejamos 
+                            contribuir para o desenvolvimento e crescimento das empresas com as quais colaboramos, 
+                            consolidando nossa posição como parceira estratégica no sucesso de cada projeto.
                         </p>
                     </div>
                 </div>
@@ -348,12 +374,14 @@
                         <img src="assets/visao.webp" alt="Crescimento VALION" class="w-full rounded-lg shadow-lg">
                     </div>
                     <div class="lg:w-1/2 lg:order-1">
-                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossos Valores</h3>
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Valores</h3>
                         <p class="text-black">
-                           <strong> Deus </strong>– Nossa missão é guiada pela fé, honrando a vida e tudo ao nosso redor.<br/>
-                            <strong>Família </strong>– É o nosso alicerce, fonte de força e legado para o futuro.<br/>
-                            <strong>Verdade</strong> – Transparência, honestidade e integridade em todas as relações.<br/>
-                            <strong>Justiça </strong>– Agimos com respeito, dignidade e equidade, promovendo confiança e harmonia.
+                            •	Responsabilidade: Atuamos de forma ética e transparente, sempre comprometidos com os impactos sociais e ambientais de nossas ações.<br/><br/>
+                            •	Excelência: Buscamos continuamente a melhoria em todos os aspectos do nosso trabalho, oferecendo serviços que atendem aos mais altos padrões de qualidade.<br/><br/>
+                            •	Inovação: Estamos sempre em busca de novas soluções, adotando tecnologias avançadas e práticas que garantam a eficiência e a competitividade dos nossos serviços.<br/><br/>
+                            •	Comprometimento: Cada projeto é uma prioridade para nossa equipe, que se dedica integralmente para garantir resultados positivos e de longo prazo.<br/><br/>
+                            •	Sustentabilidade: Atuamos de maneira consciente, promovendo práticas que respeitam o meio ambiente e contribuem para um futuro mais sustentável.<br/><br/>
+
                         </p>
                     </div>
                 </div>
@@ -517,8 +545,6 @@
 
             </div>
         </section>
-
-        
 
         
         <!-- FAQ Section -->
