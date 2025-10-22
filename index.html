@@ -25,6 +25,165 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ===== Animações de entrada das seções principais ===== */
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(150px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Estado inicial */
+        #Transportes, 
+        #Locação {
+            opacity: 0;
+            transform: translateX(0);
+            transition: all 1s ease;
+        }
+
+        /* Quando entra na tela */
+        #Transportes.in-view {
+            animation: slideInFromLeft 1.2s ease forwards;
+        }
+
+        #Locação.in-view {
+            animation: slideInFromRight 1.2s ease forwards;
+        }
+
+        /* ===== Animação da seção "Quem Confia na VALION" ===== */
+        @keyframes slideInSectionLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* estado inicial */
+        #ClienteSection {
+            opacity: 0;
+            transform: translateX(-150px);
+            transition: all 1s ease;
+        }
+
+        /* estado animado */
+        #ClienteSection.in-view {
+            animation: slideInSectionLeft 1.2s ease forwards;
+        }
+
+        /* ===== Animação suave dos contadores ===== */
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .counter:hover {
+            transform: scale(1.1);
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%) scale(0.9); opacity: 0; }
+            to { transform: translateX(0) scale(1); opacity: 1; }
+        }
+
+        @keyframes pulseOnce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes zoomOut {
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(0.7); opacity: 0; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%) scale(0.9); opacity: 0; }
+            to { transform: translateX(0) scale(1); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* ===== Animação do botão "Nossa História" ===== */
+        #btnHistoria {
+            animation: pulseButton 1s infinite ease-in-out;
+            transform-origin: center;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes pulseButton {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
+            }
+        }
+        @keyframes pulseButtonWhats {
+            0%, 100% {
+                transform: scale(1);
+            }
+            60% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* ===== Efeito de hover ===== */
+        #btnHistoria:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.623);
+        }
+
+        /* ===== Animações de entrada dos diferenciais ===== */
+        @keyframes slideInLeftDiff {
+            from { transform: translateX(-150px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRightDiff {
+            from { transform: translateX(150px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* estado inicial dos cards */
+        .diferencial {
+            opacity: 0;
+            transform: translateX(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        /* animações ativadas dinamicamente */
+        .diferencial.left.in-view {
+            animation: slideInLeftDiff 1s ease forwards;
+        }
+
+        .diferencial.right.in-view {
+            animation: slideInRightDiff 1s ease forwards;
+        }
+
+
         #divIconWhats {
             cursor: pointer;
             width: 50px;
@@ -34,6 +193,7 @@
             z-index: 6;
         }
         #iconWhtas{
+            animation: pulseButtonWhats 1s infinite ease-in-out;
             cursor: pointer;
             position: fixed;
             bottom: 5%;
@@ -192,12 +352,20 @@
                 <div class="absolute inset-0  opacity-20"></div>
                 <img src="./assets/valion.webp" alt="Apresentação Institucional" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
-                    <div class="text-white max-w-2xl">
-                        <img src="./assets/logoHeader.webp"/>
-                        <br/>
-                        <p class="text-xl md:text-2xl mb-9">11 anos de excelência</p>
-                        <a href="#Historia" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
+                    <div class="text-white max-w-4xl text-center relative overflow-hidden mx-auto">
+                        <img id="logoChterra" src="assets/chterra.webp" alt="logoCHterra"
+                            class="opacity-0 mx-auto w-72 md:w-96 mb-4">
+                        <p id="textoAgora" class="opacity-0 text-3xl md:text-7xl font-bold mb-4">AGORA É</p>
+                        <img id="logoValion" src="./assets/logoHeader.webp" alt="Logo VALION"
+                            class="opacity-0 mx-auto w-80 md:w-[450px] mt-6">
+                        <p id="anos" class="opacity-0 text-2xl md:text-3xl mt-6 mb-9 font-medium">11 anos de excelência</p>
+                        <a id="btnHistoria" href="#Historia"
+                            style="background: linear-gradient(180deg, #cb4017, #f28b0c);"
+                            class="opacity-0 inline-block hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg md:text-xl">
+                            Nossa História
+                        </a>
                     </div>
+
                 </div>
             </div>
 
@@ -208,7 +376,7 @@
                     <div class="text-white max-w-2xl">
                         <h1 class=" text-4xl md:text-6xl font-bold mb-4">Transporte Rodoviário</h1>
                         <p class="text-xl md:text-2xl mb-8">Soluções completas para sua empresa</p>
-                        <a href="#Transportes" style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="hover:bg-yellow-600 text-whithe-900 font-bold py-3 px-10 rounded-full transition duration-300">Saiba Mais</a>
+                        <a id="btnHistoria" href="#Transportes" style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="hover:bg-yellow-600 text-whithe-900 font-bold py-3 px-10 rounded-full transition duration-300">Saiba Mais</a>
                     </div>
                 </div>
             </div>
@@ -220,7 +388,7 @@
                     <div class="text-white max-w-2xl">
                         <h1 class="text-4xl md:text-6xl font-bold mb-4">Locação de Máquinas</h1>
                         <p class="text-xl md:text-2xl mb-8">Equipamentos modernos para sua obra</p>
-                        <a href="#Locação" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Saiba Mais</a>
+                        <a id="btnHistoria" href="#Locação" style="background: linear-gradient(180deg, #cb4017, #f28b0c);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Saiba Mais</a>
                     </div>
                 </div>
             </div>          
@@ -399,6 +567,7 @@
         </section>
 
         <!-- Differentiators Section -->
+         <!-- Differentiators Section -->
         <section id="Diferenciais" class="py-16 px-4">
             <br/><br/>
             <div class="container mx-auto max-w-4xl">
@@ -408,9 +577,11 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+                    
+                    <!-- 1 -->
+                    <div class="diferencial left p-6 rounded-lg" style="background: linear-gradient(180deg, #cb4017, #f28b0c);">
                         <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                            <div class="bg-yellow-500 text-black p-3 rounded-full mr-4">
                                 <i class="fa-solid fa-people-robbery"></i>
                             </div>
                             <div>
@@ -422,10 +593,11 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+
+                    <!-- 2 -->
+                    <div class="diferencial right p-6 rounded-lg" style="background: linear-gradient(180deg, #cb4017, #f28b0c);">
                         <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                            <div class="bg-yellow-500 text-black p-3 rounded-full mr-4">
                                 <i class="fa-solid fa-thumbs-up"></i>
                             </div>
                             <div>
@@ -437,24 +609,26 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+
+                    <!-- 3 -->
+                    <div class="diferencial left p-6 rounded-lg" style="background: linear-gradient(180deg, #cb4017, #f28b0c);">
                         <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                            <div class="bg-yellow-500 text-black p-3 rounded-full mr-4">
                                 <i class="fa-solid fa-minimize"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl text-white font-bold mb-2">Responsabilidade e Comprometimento</h3>
                                 <p class="opacity-80 text-white">
-                                    Assumimos a responsabilidade por nossos projetos com total comprometimento, garantindo resultados de alta qualidade
+                                    Assumimos a responsabilidade por nossos projetos com total comprometimento, garantindo resultados de alta qualidade.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+
+                    <!-- 4 -->
+                    <div class="diferencial right p-6 rounded-lg" style="background: linear-gradient(180deg, #cb4017, #f28b0c);">
                         <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                            <div class="bg-yellow-500 text-black p-3 rounded-full mr-4">
                                 <i class="fa-solid fa-ranking-star"></i>
                             </div>
                             <div>
@@ -465,34 +639,42 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+
+                    <!-- 5 -->
+                    <div class="diferencial left p-6 rounded-lg" style="background: linear-gradient(180deg, #cb4017, #f28b0c);">
                         <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                            <div class="bg-yellow-500 text-black p-3 rounded-full mr-4">
                                 <i class="fas fa-leaf text-xl"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl text-white font-bold mb-2">Sustentabilidade</h3>
-                                <p class="opacity-80 text-white">Frota moderna com baixa emissão de poluentes e programas de compensação ambiental.</p>
+                                <p class="opacity-80 text-white">
+                                    Frota moderna com baixa emissão de poluentes e programas de compensação ambiental.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="p-6 rounded-lg">
+
+                    <!-- 6 -->
+                    <div class="diferencial right p-6 rounded-lg" style="background: linear-gradient(180deg, #cb4017, #f28b0c);">
                         <div class="flex items-start">
-                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                            <div class="bg-yellow-500 text-black p-3 rounded-full mr-4">
                                 <i class="fa-solid fa-microchip"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl text-white font-bold mb-2">Tecnologia de Ponta</h3>
-                                <p class="opacity-80 text-white">Rastreamento via satélite, monitoramento em tempo real e sistemas de gestão logística integrados.</p>
+                                <p class="opacity-80 text-white">
+                                    Rastreamento via satélite, monitoramento em tempo real e sistemas de gestão logística integrados.
+                                </p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
             <br/><br/>
-            <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="text-center  text-white py-12 px-4 rounded-lg shadow-lg">
+            <div style="background: linear-gradient(180deg, #cb4017, #f28b0c);" class="text-center text-white py-12 px-4 rounded-lg shadow-lg">
                 <h3 class="text-2xl font-bold mb-6">Nossos Números</h3>
                 <div class="flex flex-wrap justify-center gap-8">
                     <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
@@ -510,6 +692,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- nosso Clientes - qe confia na VAlion-->
         <section id="ClienteSection" class="py-16 px-4 bg-gray-100">
@@ -989,6 +1172,140 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const transportes = document.querySelector("#Transportes");
+            const locacao = document.querySelector("#Locação");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        observer.unobserve(entry.target); // anima uma vez
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (transportes) observer.observe(transportes);
+            if (locacao) observer.observe(locacao);
+        });
+        </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const clienteSection = document.querySelector("#ClienteSection");
+
+            if (clienteSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            clienteSection.classList.add("in-view");
+                            observer.unobserve(clienteSection); // anima apenas uma vez
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                observer.observe(clienteSection);
+            }
+        });
+        </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".counter");
+            let countersActivated = false;
+
+            function animateCounter(counter) {
+                const target = +counter.getAttribute("data-target");
+                const duration = 2000; // tempo total (ms)
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const currentValue = Math.floor(progress * target);
+
+                    counter.textContent = currentValue.toLocaleString("pt-BR");
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+
+                requestAnimationFrame(update);
+            }
+
+            const sectionNumeros = document.querySelector("#Diferenciais .text-center.text-white");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !countersActivated) {
+                        countersActivated = true;
+                        counters.forEach(counter => animateCounter(counter));
+                        observer.unobserve(sectionNumeros);
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            if (sectionNumeros) observer.observe(sectionNumeros);
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const diferenciais = document.querySelectorAll('.diferencial');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target); // anima uma vez
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            diferenciais.forEach(diff => observer.observe(diff));
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chterra = document.getElementById("logoChterra");
+            const agora = document.getElementById("textoAgora");
+            const valion = document.getElementById("logoValion");
+            const anos = document.getElementById("anos");
+            const btn = document.getElementById("btnHistoria");
+
+            // Etapa 1 — CH TERRA entra da esquerda e pulsa
+            setTimeout(() => {
+                chterra.style.opacity = "1";
+                chterra.style.animation = "slideInLeft 1s ease forwards, pulseOnce 1.5s ease 1s";
+            }, 500);
+
+            // Etapa 2 — Após 2s, CH TERRA faz zoom out
+            setTimeout(() => {
+                chterra.style.animation = "zoomOut 1s ease forwards";
+            }, 2500);
+
+            // Etapa 3 — Frase "Agora é" entra da direita e sai após 1,5s
+            setTimeout(() => {
+                agora.style.opacity = "1";
+                agora.style.animation = "slideInRight 0.8s ease forwards";
+                setTimeout(() => agora.style.animation = "zoomOut 0.8s ease forwards", 1500);
+            }, 3600);
+
+            // Etapa 4 — Logo VALION entra com zoom-in e permanece
+            setTimeout(() => {
+                valion.style.opacity = "1";
+                valion.style.animation = "zoomIn 1s ease forwards";
+                setTimeout(() => {
+                    anos.style.opacity = "1";
+                    anos.style.transition = "opacity 1s ease";
+                    btn.style.opacity = "1";
+                    btn.style.transition = "opacity 1s ease";
+                }, 1000);
+            }, 5500);
+        });
+    </script>
 
     <script>
         // Carousel functionality
@@ -1021,7 +1338,7 @@
             }
             
             function startAutoPlay() {
-                intervalId = setInterval(nextSlide, 5000);
+                intervalId = setInterval(nextSlide, 10000);
             }
             
             function stopAutoPlay() {
